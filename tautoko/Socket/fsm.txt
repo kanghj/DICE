@@ -1,0 +1,43 @@
+1
+30
+1
+31
+38
+30	0	Socket
+30	6	Socket
+30	3	Socket
+3	3	getTcpNoDelay
+3	3	getPort
+3	3	setSoTimeout
+3	3	getRemoteSocketAddress
+3	3	getReceiveBufferSize
+3	3	setSendBufferSize
+3	3	connect
+3	3	getInputStream
+3	3	isClosed
+3	3	isConnected
+3	3	isBound
+0	3	connect
+6	6	getPort
+6	6	isBound
+6	6	isConnected
+6	6	getRemoteSocketAddress
+6	12	close
+0	0	getPort
+0	0	isBound
+0	0	isConnected
+0	0	getRemoteSocketAddress
+0	0	isClosed
+0	13	close
+13	13	isBound
+9	9	getPort
+9	9	close
+9	9	getRemoteSocketAddress
+9	9	isBound
+9	9	isClosed
+3	9	close
+0	31	<END>
+3	31	<END>
+9	31	<END>
+12	31	<END>
+13	31	<END>
