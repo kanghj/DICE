@@ -1,0 +1,312 @@
+<START> ArrayList size toArray toArray <END>
+<START> ArrayList size toArray toArray <END>
+<START> ArrayList <END>
+<START> ArrayList <END>
+<START> ArrayList <END>
+<START> ArrayList addAll:FALSE <END>
+<START> ArrayList addAll:FALSE <END>
+<START> ArrayList indexOf <END>
+<START> ArrayList indexOf <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove <END>
+<START> ArrayList clone clear <END>
+<START> ArrayList clone clear <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList add:TRUE set remove:TRUE add remove toArray <END>
+<START> ArrayList clone remove:FALSE <END>
+<START> ArrayList clone remove:FALSE <END>
+<START> ArrayList clone remove:FALSE <END>
+<START> ArrayList clone remove:FALSE <END>
+<START> ArrayList clear indexOf add indexOf <END>
+<START> ArrayList add set <END>
+<START> ArrayList add set <END>
+<START> ArrayList clone toArray clone add:TRUE toArray indexOf <END>
+<START> ArrayList clone toArray clone add:TRUE toArray indexOf <END>
+<START> ArrayList clone toArray clone add:TRUE toArray indexOf <END>
+<START> ArrayList clone toArray clone add:TRUE toArray indexOf <END>
+<START> ArrayList clone toArray clone add:TRUE toArray indexOf <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList indexOf addAll:FALSE clear clone isEmpty:TRUE add add:TRUE remove size <END>
+<START> ArrayList indexOf addAll:FALSE clear clone isEmpty:TRUE add add:TRUE remove size <END>
+<START> ArrayList indexOf addAll:FALSE clear clone isEmpty:TRUE add add:TRUE remove size <END>
+<START> ArrayList indexOf addAll:FALSE clear clone isEmpty:TRUE add add:TRUE remove size <END>
+<START> ArrayList indexOf addAll:FALSE clear clone isEmpty:TRUE add add:TRUE remove size <END>
+<START> ArrayList indexOf addAll:FALSE clear clone isEmpty:TRUE add add:TRUE remove size <END>
+<START> ArrayList indexOf addAll:FALSE clear clone isEmpty:TRUE add add:TRUE remove size <END>
+<START> ArrayList indexOf addAll:FALSE clear clone isEmpty:TRUE add add:TRUE remove size <END>
+<START> ArrayList add add indexOf isEmpty:FALSE toArray indexOf indexOf toArray isEmpty:FALSE isEmpty:FALSE <END>
+<START> ArrayList add add indexOf isEmpty:FALSE toArray indexOf indexOf toArray isEmpty:FALSE isEmpty:FALSE <END>
+<START> ArrayList addAll:TRUE get toArray <END>
+<START> ArrayList addAll:FALSE clone <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList clone remove:FALSE remove:FALSE clone clear <END>
+<START> ArrayList clone remove:FALSE remove:FALSE clone clear <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE addAll:TRUE set remove remove:FALSE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone remove:TRUE addAll:TRUE set remove isEmpty:FALSE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone remove:TRUE addAll:TRUE set remove isEmpty:FALSE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone remove:TRUE addAll:TRUE set remove isEmpty:FALSE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone size remove:TRUE addAll:TRUE remove remove:FALSE <END>
+<START> ArrayList clone toArray clone add:TRUE toArray indexOf remove remove:FALSE <END>
+<START> ArrayList clone toArray clone add:TRUE add toArray indexOf <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove clone isEmpty:TRUE remove:FALSE indexOf size <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove clone isEmpty:TRUE remove:FALSE indexOf size <END>
+<START> ArrayList size add size clone get get clear isEmpty:TRUE size add:TRUE toArray toArray remove clone isEmpty:TRUE remove:FALSE indexOf size <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE addAll:TRUE set remove add:TRUE toArray indexOf <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE addAll:TRUE set remove add:TRUE toArray indexOf <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE isEmpty:TRUE toArray add clone clone size addAll:FALSE set remove remove:FALSE <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE isEmpty:TRUE toArray add clone clone size addAll:FALSE set remove remove:FALSE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone size remove:TRUE isEmpty:FALSE remove remove:FALSE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone size remove:TRUE isEmpty:FALSE remove remove:FALSE <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE toArray add clone clone addAll:TRUE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE toArray indexOf remove remove:FALSE remove add add <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE toArray indexOf remove remove:FALSE remove add add <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE toArray indexOf remove remove:FALSE remove add add <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size remove:TRUE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE toArray indexOf remove remove:FALSE remove add add <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone size remove:TRUE isEmpty:FALSE remove remove:FALSE addAll:TRUE toArray size get add <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone size remove:TRUE isEmpty:FALSE remove remove:FALSE addAll:TRUE toArray size get add <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone size remove:TRUE isEmpty:FALSE remove remove:FALSE addAll:TRUE toArray size get add <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE add clone size remove:TRUE addAll:TRUE set remove <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE addAll:TRUE clear toArray clear remove:FALSE <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE isEmpty:TRUE toArray add clone clone size addAll:FALSE remove remove:FALSE <END>
+<START> ArrayList addAll:FALSE isEmpty:TRUE add clone size remove:TRUE addAll:FALSE <END>
+<START> ArrayList addAll:FALSE isEmpty:TRUE add clone size remove:TRUE addAll:FALSE <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE addAll:TRUE clear toArray clear isEmpty:TRUE <END>
+<START> ArrayList size remove:FALSE toArray toArray size addAll:TRUE addAll:TRUE clone clone <END>
+<START> ArrayList isEmpty:TRUE addAll:FALSE toArray add clone size remove:TRUE isEmpty:TRUE <END>
+<START> ArrayList clear add size remove:TRUE isEmpty:TRUE size isEmpty:TRUE clear <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE addAll:TRUE size toArray size isEmpty:FALSE get get <END>
+<START> ArrayList clear toArray addAll:FALSE addAll:FALSE clone addAll:FALSE <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE clear toArray clear isEmpty:TRUE <END>
+<START> ArrayList size add:TRUE add indexOf indexOf get toArray isEmpty:FALSE add:TRUE <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE isEmpty:TRUE add size isEmpty:FALSE set remove isEmpty:TRUE <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE isEmpty:TRUE add size isEmpty:FALSE set remove isEmpty:TRUE <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE indexOf toArray size get get <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE indexOf remove remove:TRUE remove add add add <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE indexOf remove remove:TRUE remove add add add <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE indexOf remove remove:TRUE remove add add add <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE add size set remove isEmpty:TRUE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE toArray indexOf remove remove:FALSE remove add add add set <END>
+<START> ArrayList size add:TRUE add get toArray isEmpty:FALSE add:TRUE <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone remove:TRUE remove:FALSE addAll:TRUE <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray clone clone size isEmpty:FALSE addAll:TRUE clone clone size remove:FALSE addAll:TRUE remove add:TRUE indexOf clone <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone remove:FALSE addAll:TRUE set remove add clone addAll:TRUE clone remove remove clone toArray <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone remove:FALSE addAll:TRUE set remove add clone addAll:TRUE clone remove remove clone toArray <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone size isEmpty:FALSE addAll:TRUE add clone clone indexOf toArray get <END>
+<START> ArrayList add:TRUE isEmpty:FALSE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE toArray indexOf remove remove:FALSE remove remove:FALSE add add <END>
+<START> ArrayList toArray add clone size remove:TRUE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE remove set isEmpty:FALSE clear <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone remove:TRUE indexOf toArray get get addAll:FALSE add clone addAll:FALSE clone remove <END>
+<START> ArrayList add:TRUE isEmpty:FALSE toArray add clone clone size isEmpty:FALSE add clone clone size remove:FALSE set <END>
+<START> ArrayList add:TRUE isEmpty:FALSE addAll:TRUE toArray clone clone size isEmpty:FALSE clone clone size remove:FALSE addAll:TRUE remove add:TRUE toArray indexOf remove remove:FALSE remove remove:FALSE remove add add <END>
+<START> ArrayList add:TRUE isEmpty:FALSE addAll:TRUE toArray add clone add clone size isEmpty:FALSE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE toArray indexOf remove remove:FALSE remove remove:TRUE clear isEmpty:TRUE clear <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE add clone remove:FALSE remove:TRUE addAll:TRUE set <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone isEmpty:FALSE addAll:TRUE add clone clone size isEmpty:FALSE set remove size remove:TRUE addAll:TRUE clear clear isEmpty:TRUE clear <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE isEmpty:FALSE toArray toArray add clone size remove:TRUE add:TRUE addAll:TRUE clear toArray clear isEmpty:TRUE <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone size remove:TRUE set remove add:TRUE toArray indexOf <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove add:TRUE indexOf remove remove:TRUE clone <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone remove:TRUE addAll:TRUE set remove remove:FALSE addAll:TRUE set remove add:TRUE toArray indexOf remove:FALSE remove remove:FALSE clear isEmpty:TRUE clear isEmpty:TRUE clone <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone remove:FALSE set remove clone addAll:TRUE clone remove indexOf remove remove:TRUE remove add add toArray isEmpty:FALSE isEmpty:FALSE add:TRUE get <END>
+<START> ArrayList addAll:TRUE isEmpty:FALSE toArray add clone clone remove:TRUE get get addAll:TRUE set <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone remove:FALSE set clone addAll:TRUE clone remove indexOf remove remove:TRUE remove add indexOf clear isEmpty:TRUE toArray <END>
+<START> ArrayList isEmpty:FALSE remove:TRUE <END>
+<START> ArrayList isEmpty:TRUE toArray add clone size remove:TRUE addAll:TRUE indexOf toArray get addAll:FALSE add clone set <END>
+<START> ArrayList add:TRUE isEmpty:FALSE isEmpty:FALSE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE add clone clone size remove:FALSE addAll:TRUE set remove get toArray indexOf remove remove:FALSE remove remove:TRUE clear isEmpty:TRUE clear isEmpty:TRUE addAll:TRUE toArray isEmpty:FALSE remove <END>
+<START> ArrayList isEmpty:TRUE addAll:TRUE toArray add clone size isEmpty:FALSE addAll:TRUE remove remove:FALSE get isEmpty:FALSE addAll:FALSE clone remove remove clone add:TRUE toArray indexOf clear clear isEmpty:TRUE addAll:FALSE isEmpty:TRUE toArray toArray <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE isEmpty:TRUE add size isEmpty:FALSE clone clone size isEmpty:FALSE addAll:FALSE get clone clone size remove:FALSE addAll:TRUE <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE isEmpty:TRUE add size isEmpty:FALSE clone clone size isEmpty:FALSE addAll:FALSE get clone clone size remove:FALSE addAll:TRUE <END>
+<START> ArrayList isEmpty:TRUE add:TRUE isEmpty:FALSE isEmpty:FALSE addAll:TRUE size toArray clone clone isEmpty:FALSE addAll:TRUE clone size toArray isEmpty:FALSE toArray indexOf indexOf set remove remove:FALSE addAll:TRUE set remove add clone addAll:TRUE isEmpty:FALSE clear isEmpty:TRUE clear isEmpty:TRUE addAll:TRUE isEmpty:FALSE addAll:TRUE indexOf isEmpty:FALSE clear isEmpty:TRUE clone add:TRUE indexOf clear addAll:TRUE <END>
+<START> ArrayList add:TRUE isEmpty:FALSE isEmpty:FALSE addAll:TRUE toArray add clone clone size isEmpty:FALSE addAll:TRUE get add clone size remove:FALSE addAll:TRUE set get toArray clear isEmpty:TRUE addAll:TRUE remove <END>
+<START> ArrayList isEmpty:TRUE isEmpty:TRUE isEmpty:TRUE add size isEmpty:FALSE isEmpty:FALSE clone set add clone clone remove:FALSE set clone addAll:FALSE clone indexOf <END>
+<START> ArrayList isEmpty:TRUE size isEmpty:TRUE addAll:TRUE get add clone size isEmpty:FALSE clone clone size isEmpty:FALSE addAll:TRUE get add clone clone size remove:FALSE addAll:TRUE set remove get remove remove:TRUE add:TRUE addAll:TRUE toArray clear clear isEmpty:TRUE clear isEmpty:TRUE addAll:TRUE toArray isEmpty:FALSE isEmpty:FALSE toArray toArray clone isEmpty:FALSE isEmpty:FALSE toArray clone clone clone clear clear size toArray clone <END>
+<START> ArrayList remove <END>
+<START> ArrayList add:TRUE get set remove:FALSE add size remove:FALSE addAll:TRUE add clone clone size clone clone size isEmpty:FALSE clone isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE addAll:TRUE isEmpty:FALSE clear toArray isEmpty:TRUE clear isEmpty:TRUE isEmpty:TRUE toArray toArray addAll:TRUE toArray toArray toArray toArray clone isEmpty:FALSE isEmpty:FALSE toArray clone isEmpty:FALSE toArray clone clone clone toArray clone isEmpty:FALSE isEmpty:FALSE toArray clone clone clear size toArray isEmpty:TRUE isEmpty:TRUE clear clone clear clear size size toArray isEmpty:TRUE clear clear isEmpty:TRUE clear clear isEmpty:TRUE clone isEmpty:TRUE isEmpty:TRUE toArray isEmpty:TRUE clone isEmpty:TRUE size isEmpty:TRUE toArray toArray clone isEmpty:TRUE size clone addAll:TRUE toArray toArray <END>
+<START> ArrayList size toArray toArray <END>
+<START> ArrayList toArray add clone clone size add clone clone size set remove toArray indexOf remove remove add add <END>
+<START> ArrayList indexOf <END>
+<START> ArrayList <END>
+<START> ArrayList <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone clone size size clear toArray clear <END>
+<START> ArrayList indexOf <END>
+<START> ArrayList <END>
+<START> ArrayList size <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone clone size add clone clone set remove add clone clone remove remove clone toArray indexOf remove clear toArray indexOf toArray <END>
+<START> ArrayList size add size clone get get clear size toArray toArray remove <END>
+<START> ArrayList toArray add clone clone size add clone clone set remove clone clone remove indexOf remove remove add add toArray get <END>
+<START> ArrayList toArray add clone clone size clear toArray clear <END>
+<START> ArrayList clone toArray clone toArray indexOf remove clone toArray clear <END>
+<START> ArrayList clone clear <END>
+<START> ArrayList set add remove toArray <END>
+<START> ArrayList toArray add clone size add clone clone size set remove toArray indexOf remove remove add add toArray <END>
+<START> ArrayList clone <END>
+<START> ArrayList toArray add clone clone size add clone clone set remove clone clone remove indexOf remove remove toArray indexOf clear indexOf toArray <END>
+<START> ArrayList toArray add clone clone size add clone clone size set remove indexOf remove remove add add set <END>
+<START> ArrayList clear indexOf add indexOf <END>
+<START> ArrayList clone toArray clone toArray indexOf remove clone toArray clear toArray clear <END>
+<START> ArrayList add set <END>
+<START> ArrayList toArray <END>
+<START> ArrayList clone toArray clone toArray indexOf <END>
+<START> ArrayList size <END>
+<START> ArrayList toArray add clone clone size set remove <END>
+<START> ArrayList toArray toArray <END>
+<START> ArrayList toArray size <END>
+<START> ArrayList indexOf clear clone add remove size <END>
+<START> ArrayList clear toArray <END>
+<START> ArrayList add add indexOf toArray indexOf indexOf toArray <END>
+<START> ArrayList <END>
+<START> ArrayList clear <END>
+<START> ArrayList toArray add clone size remove toArray get add remove toArray indexOf clear clear toArray toArray <END>
+<START> ArrayList size get add clone size add clone clone clear set remove clear clear clear clear clear toArray toArray clear toArray toArray toArray clone toArray clone clone clone clear clear clone clear clear size toArray <END>
+<START> ArrayList toArray clear <END>
+<START> ArrayList get toArray <END>
+<START> ArrayList add size add <END>
+<START> ArrayList toArray add clone clone size add clone clone size set remove indexOf remove remove add add set <END>
+<START> ArrayList clone toArray clone clone size clear clear toArray clear toArray <END>
+<START> ArrayList clone <END>
+<START> ArrayList size <END>
+<START> ArrayList toArray add clone clone size set remove <END>
+<START> ArrayList clone clone clear <END>
+<START> ArrayList indexOf indexOf <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone clone size set remove <END>
+<START> ArrayList toArray add clone clone set remove <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone size remove <END>
+<START> ArrayList clone toArray clone toArray indexOf remove <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone size set remove toArray indexOf clear toArray <END>
+<START> ArrayList add indexOf toArray indexOf toArray <END>
+<START> ArrayList clone toArray clone add toArray indexOf <END>
+<START> ArrayList size add size clone get get clear size toArray toArray remove clone indexOf size <END>
+<START> ArrayList toArray add clone clone size set remove toArray indexOf <END>
+<START> ArrayList toArray add clone clone size set remove <END>
+<START> ArrayList toArray add clone clone size set remove toArray indexOf <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone size remove <END>
+<START> ArrayList toArray add clone clone <END>
+<START> ArrayList toArray clone toArray <END>
+<START> ArrayList indexOf <END>
+<START> ArrayList clear <END>
+<START> ArrayList indexOf <END>
+<START> ArrayList toArray add clone size set remove toArray <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone size remove toArray size get add <END>
+<START> ArrayList <END>
+<START> ArrayList add clone size set remove <END>
+<START> ArrayList toArray add clone clone size remove <END>
+<START> ArrayList <END>
+<START> ArrayList add clone size <END>
+<START> ArrayList toArray add clone clone size clear toArray clear <END>
+<START> ArrayList size toArray toArray size clone clone <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone size <END>
+<START> ArrayList clear add size size clear <END>
+<START> ArrayList toArray add clone clone size size toArray size get get <END>
+<START> ArrayList indexOf clear clone remove size <END>
+<START> ArrayList clear toArray clone <END>
+<START> ArrayList toArray add clone clone size clear toArray clear <END>
+<START> ArrayList size add indexOf indexOf get toArray <END>
+<START> ArrayList clone <END>
+<START> ArrayList add size set remove <END>
+<START> ArrayList toArray add clone clone size indexOf toArray size get get <END>
+<START> ArrayList toArray add clone clone size add clone clone size set remove indexOf remove remove add add add <END>
+<START> ArrayList clone <END>
+<START> ArrayList add size set remove <END>
+<START> ArrayList toArray add clone clone size add clone clone size set remove toArray indexOf remove remove add add add set <END>
+<START> ArrayList size add get toArray <END>
+<START> ArrayList toArray clone clone size clone clone size remove indexOf remove remove <END>
+<START> ArrayList toArray add clone clone <END>
+<START> ArrayList toArray clone clone size clone clone size remove indexOf clone <END>
+<START> ArrayList toArray add clone clone size add clone clone set remove add clone clone remove remove clone toArray <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone size add clone clone indexOf toArray get <END>
+<START> ArrayList toArray add clone clone size add clone clone size set remove toArray indexOf remove remove add add <END>
+<START> ArrayList toArray add clone clone size clear toArray clear clear <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add size toArray size get <END>
+<START> ArrayList toArray add clone size add clone clone size remove set clear <END>
+<START> ArrayList toArray add clone clone indexOf toArray get get add clone clone remove <END>
+<START> ArrayList toArray add clone clone size add clone clone size set <END>
+<START> ArrayList toArray clone clone size clone clone size remove toArray indexOf remove remove remove add add <END>
+<START> ArrayList toArray add clone add clone size add clone clone size set remove toArray indexOf remove remove clear clear <END>
+<START> ArrayList toArray add clone clone size add clone clone set remove add clone clone remove remove clone toArray indexOf <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone clone size add clone set <END>
+<START> ArrayList toArray add clone clone add clone clone size set remove size clear clear clear <END>
+<START> ArrayList toArray add clone clone size set remove <END>
+<START> ArrayList toArray toArray add clone size clear toArray clear <END>
+<START> ArrayList toArray add clone clone size set remove toArray indexOf <END>
+<START> ArrayList <END>
+<START> ArrayList toArray add clone size remove toArray size get add remove <END>
+<START> ArrayList toArray add clone clone size add clone clone size set remove indexOf remove clone <END>
+<START> ArrayList toArray add clone clone set remove set remove toArray indexOf remove clear clear clone <END>
+<START> ArrayList toArray add clone clone get get set <END>
+<START> ArrayList toArray add clone clone size add clone clone set clone clone remove indexOf remove remove add indexOf clear toArray <END>
+<START> ArrayList toArray add clone size indexOf toArray get add clone set <END>
+<START> ArrayList toArray add clone clone size add clone clone size set remove get toArray indexOf remove remove clear clear toArray remove <END>
+<START> ArrayList toArray add clone size remove get clone remove remove clone toArray indexOf clear clear toArray toArray <END>
+<START> ArrayList toArray get add clone clone size add clone clone clear set remove <END>
+<START> ArrayList add size clone clone size get clone clone size <END>
+<START> ArrayList size toArray clone clone clone size toArray toArray indexOf indexOf set remove set remove add clone clear clear indexOf clear clone indexOf clear <END>
+<START> ArrayList toArray add clone clone size get add clone size set get toArray clear remove <END>
+<START> ArrayList add size clone set add clone clone set clone clone indexOf <END>
+<START> ArrayList size get add clone size clone clone size get add clone clone size set remove get remove toArray clear clear clear toArray toArray toArray clone toArray clone clone clone clear clear size toArray clone <END>
+<START> ArrayList remove <END>
+<START> ArrayList size get clone size add clone clone get add clone set remove get toArray clear clear toArray clear toArray toArray toArray toArray clone toArray clone clone clear size toArray clone clone clear clear size clear toArray <END>
+<START> ArrayList get set add size add clone clone size clone clone size clone clear toArray clear toArray toArray toArray toArray toArray toArray clone toArray clone toArray clone clone clone toArray clone toArray clone clone clear size toArray clear clone clear clear size size toArray clear clear clear clear clone toArray clone size toArray toArray clone size clone toArray toArray <END>

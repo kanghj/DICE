@@ -1,0 +1,37 @@
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer hasMoreTokens:FALSE <END>
+<START> NumberFormatStringTokenizer hasMoreTokens:FALSE <END>
+<START> NumberFormatStringTokenizer hasMoreTokens:FALSE <END>
+<START> NumberFormatStringTokenizer hasMoreTokens:FALSE <END>
+<START> NumberFormatStringTokenizer nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken <END>
+<START> NumberFormatStringTokenizer nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken <END>
+<START> NumberFormatStringTokenizer nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken <END>
+<START> NumberFormatStringTokenizer nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken <END>
+<START> NumberFormatStringTokenizer nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken <END>
+<START> NumberFormatStringTokenizer nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken <END>
+<START> NumberFormatStringTokenizer hasMoreTokens:FALSE isLetterOrDigitAhead:FALSE <END>
+<START> NumberFormatStringTokenizer hasMoreTokens:FALSE isLetterOrDigitAhead:FALSE <END>
+<START> NumberFormatStringTokenizer nextToken hasMoreTokens:TRUE nextIsSep:TRUE nextToken hasMoreTokens:TRUE nextIsSep:FALSE isLetterOrDigitAhead:TRUE nextToken nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextIsSep:TRUE isLetterOrDigitAhead:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE nextToken nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken nextIsSep:FALSE isLetterOrDigitAhead:TRUE nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer nextToken hasMoreTokens:TRUE nextIsSep:TRUE nextToken hasMoreTokens:TRUE nextIsSep:FALSE isLetterOrDigitAhead:TRUE nextToken nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextIsSep:TRUE isLetterOrDigitAhead:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE nextToken nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken nextIsSep:FALSE isLetterOrDigitAhead:TRUE nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer nextToken hasMoreTokens:TRUE nextIsSep:TRUE nextToken hasMoreTokens:TRUE nextIsSep:FALSE isLetterOrDigitAhead:TRUE nextToken nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextIsSep:TRUE isLetterOrDigitAhead:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE nextToken nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken nextIsSep:FALSE isLetterOrDigitAhead:TRUE nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer nextToken hasMoreTokens:TRUE nextIsSep:TRUE nextToken hasMoreTokens:TRUE nextIsSep:FALSE isLetterOrDigitAhead:TRUE nextToken nextToken hasMoreTokens:TRUE hasMoreTokens:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextIsSep:TRUE isLetterOrDigitAhead:TRUE hasMoreTokens:TRUE isLetterOrDigitAhead:TRUE nextToken hasMoreTokens:TRUE nextToken nextToken isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE isLetterOrDigitAhead:TRUE nextToken nextIsSep:FALSE isLetterOrDigitAhead:TRUE nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken <END>
+<START> NumberFormatStringTokenizer nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken nextToken <END>

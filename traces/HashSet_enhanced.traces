@@ -1,0 +1,135 @@
+<START> HashSet <END>
+<START> HashSet size <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet size size iterator iterator size size <END>
+<START> HashSet <END>
+<START> HashSet size <END>
+<START> HashSet <END>
+<START> HashSet size iterator size iterator <END>
+<START> HashSet size iterator <END>
+<START> HashSet <END>
+<START> HashSet size <END>
+<START> HashSet size size iterator iterator size size iterator <END>
+<START> HashSet iterator size size size size size size iterator size iterator iterator iterator iterator iterator iterator iterator iterator size iterator <END>
+<START> HashSet iterator iterator size iterator size size size size iterator iterator size size size size iterator iterator iterator size iterator iterator size size size size size iterator size iterator <END>
+<START> HashSet size iterator size iterator <END>
+<START> HashSet size iterator <END>
+<START> HashSet size iterator iterator size iterator size size <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet size iterator size size iterator size size iterator iterator size size size size size size size iterator size iterator size size size iterator size iterator size iterator size size size iterator iterator iterator iterator size size <END>
+<START> HashSet size iterator iterator size <END>
+<START> HashSet iterator <END>
+<START> HashSet iterator iterator iterator <END>
+<START> HashSet iterator size size size size <END>
+<START> HashSet iterator <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet size size iterator iterator size size <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet iterator iterator size size size iterator iterator size <END>
+<START> HashSet iterator iterator iterator iterator iterator <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet add:TRUE contains:FALSE add:TRUE add:TRUE contains:FALSE add:FALSE add:FALSE iterator add:FALSE isEmpty:FALSE contains:TRUE contains:FALSE contains:FALSE iterator add:TRUE contains:FALSE contains:TRUE remove:TRUE isEmpty:FALSE add:FALSE add:TRUE add:FALSE isEmpty:FALSE contains:FALSE add:FALSE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:FALSE add:TRUE add:FALSE iterator add:FALSE iterator add:FALSE isEmpty:FALSE add:FALSE remove:FALSE size contains:FALSE isEmpty:FALSE size contains:FALSE add:FALSE remove:FALSE add:FALSE contains:TRUE add:FALSE size size add:FALSE add:TRUE <END>
+<START> HashSet iterator contains:FALSE contains:FALSE contains:FALSE isEmpty:TRUE remove:FALSE add:TRUE remove:FALSE add:TRUE iterator iterator add:FALSE isEmpty:FALSE isEmpty:FALSE contains:FALSE contains:FALSE add:FALSE isEmpty:FALSE add:FALSE isEmpty:FALSE isEmpty:FALSE add:FALSE add:TRUE remove:FALSE size iterator remove:FALSE iterator size iterator add:FALSE contains:TRUE iterator size <END>
+<START> HashSet iterator contains:FALSE contains:FALSE contains:FALSE isEmpty:TRUE remove:FALSE add:TRUE remove:FALSE add:TRUE iterator iterator add:FALSE isEmpty:FALSE isEmpty:FALSE contains:FALSE contains:FALSE add:FALSE isEmpty:FALSE add:FALSE isEmpty:FALSE isEmpty:FALSE add:FALSE add:TRUE remove:FALSE size iterator remove:FALSE iterator size iterator add:FALSE contains:TRUE iterator size <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet <END>
+<START> HashSet add:FALSE remove:TRUE isEmpty:FALSE contains:FALSE iterator size remove:FALSE remove:FALSE add:TRUE remove:FALSE size remove:FALSE size contains:FALSE size contains:FALSE add:TRUE isEmpty:FALSE size size remove:FALSE size isEmpty:FALSE contains:FALSE contains:TRUE size iterator size remove:TRUE add:TRUE isEmpty:FALSE add:TRUE isEmpty:FALSE remove:TRUE size isEmpty:FALSE add:TRUE size remove:FALSE iterator isEmpty:FALSE add:TRUE isEmpty:FALSE remove:TRUE size add:TRUE isEmpty:FALSE contains:TRUE add:FALSE remove:FALSE iterator remove:FALSE contains:TRUE add:TRUE remove:FALSE <END>
+<START> HashSet remove:TRUE <END>
+<START> HashSet isEmpty:FALSE remove:FALSE isEmpty:FALSE <END>
+<START> HashSet remove:TRUE <END>
+<START> HashSet isEmpty:FALSE remove:FALSE isEmpty:FALSE <END>
+<START> HashSet add:FALSE remove:TRUE isEmpty:FALSE contains:FALSE iterator size remove:FALSE remove:FALSE add:TRUE remove:FALSE size remove:FALSE size contains:FALSE size contains:FALSE add:TRUE isEmpty:FALSE size size remove:FALSE size isEmpty:FALSE contains:FALSE iterator size remove:TRUE add:TRUE isEmpty:FALSE remove:TRUE isEmpty:FALSE remove:TRUE size isEmpty:FALSE add:TRUE size remove:FALSE iterator isEmpty:FALSE add:TRUE isEmpty:FALSE remove:TRUE size add:TRUE isEmpty:FALSE contains:TRUE add:TRUE remove:FALSE iterator remove:FALSE contains:TRUE add:TRUE remove:FALSE <END>
+<START> HashSet add:TRUE add:FALSE contains:FALSE add:TRUE add:TRUE add:TRUE add:FALSE add:TRUE add:TRUE add:TRUE add:FALSE add:TRUE remove:TRUE contains:FALSE add:TRUE add:TRUE remove:TRUE isEmpty:FALSE contains:FALSE isEmpty:FALSE remove:FALSE remove:FALSE contains:FALSE contains:FALSE remove:FALSE contains:TRUE isEmpty:FALSE isEmpty:FALSE remove:FALSE iterator size add:TRUE remove:FALSE contains:TRUE add:FALSE isEmpty:FALSE isEmpty:FALSE add:TRUE add:FALSE iterator contains:FALSE iterator remove:TRUE add:TRUE remove:TRUE contains:TRUE isEmpty:FALSE size isEmpty:FALSE contains:FALSE size isEmpty:FALSE contains:FALSE isEmpty:FALSE add:TRUE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE add:TRUE add:TRUE <END>
+<START> HashSet contains:FALSE iterator iterator iterator iterator isEmpty:FALSE contains:TRUE add:TRUE isEmpty:FALSE isEmpty:FALSE add:TRUE remove:FALSE iterator iterator remove:FALSE isEmpty:FALSE remove:FALSE contains:FALSE size isEmpty:FALSE contains:FALSE contains:FALSE isEmpty:FALSE isEmpty:FALSE remove:FALSE <END>
+<START> HashSet add:TRUE add:FALSE add:FALSE size add:FALSE add:FALSE <END>
+<START> HashSet add:TRUE add:FALSE add:FALSE size add:FALSE add:FALSE <END>
+<START> HashSet remove:TRUE contains:FALSE iterator contains:FALSE <END>
+<START> HashSet remove:TRUE contains:FALSE iterator contains:FALSE <END>
+<START> HashSet remove:TRUE contains:FALSE iterator contains:FALSE <END>
+<START> HashSet remove:TRUE contains:FALSE iterator contains:FALSE <END>
+<START> HashSet remove:TRUE contains:FALSE iterator contains:FALSE <END>
+<START> HashSet remove:TRUE contains:FALSE iterator contains:FALSE <END>
+<START> HashSet remove:TRUE contains:FALSE iterator contains:FALSE <END>
+<START> HashSet add:TRUE <END>
+<START> HashSet add:TRUE <END>
+<START> HashSet add:TRUE add:FALSE add:FALSE size add:FALSE add:FALSE <END>
+<START> HashSet add:TRUE add:FALSE add:FALSE size add:FALSE add:FALSE <END>
+<START> HashSet size <END>
+<START> HashSet size <END>
+<START> HashSet size <END>
+<START> HashSet size iterator iterator remove:FALSE iterator add:TRUE size iterator add:TRUE contains:TRUE add:TRUE iterator remove:TRUE remove:FALSE contains:FALSE iterator remove:TRUE remove:FALSE add:TRUE size add:TRUE contains:TRUE add:FALSE contains:FALSE isEmpty:FALSE remove:FALSE remove:FALSE add:TRUE contains:FALSE contains:TRUE isEmpty:FALSE add:TRUE iterator add:TRUE add:FALSE contains:FALSE iterator remove:FALSE remove:FALSE size add:FALSE add:TRUE iterator <END>
+<START> HashSet size iterator iterator remove:FALSE iterator add:TRUE size iterator add:TRUE contains:TRUE add:TRUE iterator remove:TRUE remove:FALSE contains:FALSE iterator remove:TRUE remove:FALSE add:TRUE size add:TRUE contains:TRUE add:FALSE contains:FALSE isEmpty:FALSE remove:FALSE remove:FALSE add:TRUE contains:FALSE contains:TRUE isEmpty:FALSE add:TRUE iterator add:TRUE add:FALSE contains:FALSE iterator remove:FALSE remove:FALSE size add:FALSE add:TRUE iterator <END>
+<START> HashSet remove:FALSE contains:FALSE remove:FALSE add:TRUE contains:FALSE isEmpty:FALSE remove:FALSE add:FALSE remove:FALSE size <END>
+<START> HashSet remove:FALSE contains:FALSE remove:FALSE add:TRUE contains:FALSE isEmpty:FALSE remove:FALSE add:FALSE remove:FALSE size <END>
+<START> HashSet remove:FALSE contains:FALSE remove:FALSE add:TRUE contains:FALSE isEmpty:FALSE remove:FALSE add:FALSE remove:FALSE size <END>
+<START> HashSet remove:FALSE contains:FALSE remove:FALSE add:TRUE contains:FALSE isEmpty:FALSE remove:FALSE add:FALSE remove:FALSE size <END>
+<START> HashSet remove:FALSE contains:FALSE contains:FALSE iterator isEmpty:TRUE size contains:FALSE add:TRUE remove:FALSE add:FALSE size iterator isEmpty:FALSE isEmpty:FALSE add:TRUE isEmpty:FALSE remove:FALSE remove:FALSE contains:FALSE isEmpty:FALSE size isEmpty:FALSE <END>
+<START> HashSet remove:FALSE contains:FALSE contains:FALSE iterator isEmpty:TRUE size contains:FALSE add:TRUE remove:FALSE add:FALSE size iterator isEmpty:FALSE isEmpty:FALSE add:TRUE isEmpty:FALSE remove:FALSE remove:FALSE contains:FALSE isEmpty:FALSE size isEmpty:FALSE <END>
+<START> HashSet add:TRUE add:FALSE add:FALSE add:FALSE add:TRUE add:FALSE add:FALSE add:FALSE add:FALSE add:TRUE add:FALSE add:FALSE add:TRUE add:FALSE add:FALSE add:FALSE add:FALSE add:FALSE add:FALSE isEmpty:FALSE iterator add:FALSE contains:FALSE isEmpty:FALSE size isEmpty:FALSE isEmpty:FALSE add:FALSE add:FALSE add:FALSE add:FALSE contains:FALSE add:FALSE add:FALSE size add:FALSE contains:TRUE iterator contains:FALSE size add:FALSE iterator contains:FALSE add:FALSE size add:FALSE size iterator add:FALSE add:FALSE remove:TRUE add:FALSE add:FALSE add:TRUE isEmpty:FALSE contains:FALSE add:FALSE add:FALSE add:FALSE remove:TRUE size contains:FALSE contains:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE contains:FALSE add:TRUE remove:FALSE add:FALSE iterator iterator iterator add:TRUE add:FALSE isEmpty:FALSE contains:FALSE remove:FALSE isEmpty:FALSE isEmpty:FALSE remove:FALSE add:FALSE remove:TRUE contains:TRUE contains:FALSE add:FALSE remove:TRUE add:TRUE remove:TRUE contains:FALSE isEmpty:FALSE remove:FALSE size remove:FALSE add:TRUE remove:FALSE isEmpty:FALSE add:FALSE add:FALSE add:FALSE add:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE contains:FALSE isEmpty:FALSE <END>
+<START> HashSet add:FALSE add:FALSE add:TRUE add:FALSE add:FALSE add:FALSE remove:FALSE add:TRUE add:FALSE add:TRUE add:TRUE size add:FALSE iterator isEmpty:FALSE add:FALSE add:FALSE add:FALSE remove:TRUE contains:FALSE remove:FALSE <END>
+<START> HashSet remove:TRUE contains:FALSE iterator contains:FALSE <END>
+<START> HashSet size contains:TRUE remove:TRUE size isEmpty:TRUE contains:FALSE contains:FALSE remove:FALSE <END>
+<START> HashSet iterator remove:FALSE add:FALSE add:FALSE <END>
+<START> HashSet iterator remove:FALSE isEmpty:FALSE <END>
+<START> HashSet contains:TRUE remove:TRUE size isEmpty:TRUE contains:FALSE contains:FALSE remove:FALSE isEmpty:TRUE size add:TRUE iterator isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE isEmpty:FALSE add:FALSE add:TRUE isEmpty:FALSE contains:FALSE size isEmpty:FALSE isEmpty:FALSE add:FALSE contains:FALSE isEmpty:FALSE isEmpty:FALSE add:FALSE add:FALSE isEmpty:FALSE isEmpty:FALSE remove:TRUE iterator size add:TRUE add:TRUE contains:FALSE contains:TRUE isEmpty:FALSE contains:TRUE isEmpty:FALSE isEmpty:FALSE add:FALSE isEmpty:FALSE size remove:FALSE add:FALSE remove:TRUE isEmpty:FALSE contains:FALSE add:TRUE iterator isEmpty:FALSE isEmpty:FALSE iterator contains:TRUE add:FALSE iterator contains:FALSE isEmpty:FALSE add:FALSE iterator isEmpty:FALSE size isEmpty:FALSE <END>
+<START> HashSet isEmpty:FALSE isEmpty:FALSE remove:FALSE add:TRUE isEmpty:FALSE iterator iterator isEmpty:FALSE add:TRUE add:FALSE remove:FALSE iterator isEmpty:FALSE add:TRUE isEmpty:FALSE contains:FALSE contains:FALSE contains:FALSE contains:FALSE remove:FALSE add:FALSE isEmpty:FALSE remove:FALSE remove:FALSE add:TRUE add:TRUE isEmpty:FALSE add:TRUE add:TRUE iterator isEmpty:FALSE add:TRUE remove:FALSE isEmpty:FALSE add:TRUE <END>
+<START> HashSet iterator iterator iterator size size size iterator iterator iterator size size size size iterator iterator size size <END>
+<START> HashSet iterator <END>
+<START> HashSet size <END>
+<START> HashSet iterator iterator iterator size size size size size iterator iterator iterator iterator iterator size size size iterator size iterator iterator <END>
+<START> HashSet size size iterator iterator iterator iterator iterator iterator <END>
+<START> HashSet iterator size iterator <END>
+<START> HashSet iterator size size iterator size size size size iterator size iterator iterator size <END>
+<START> HashSet size <END>
+<START> HashSet iterator size size <END>
+<START> HashSet size iterator size size size <END>
+<START> HashSet <END>
+<START> HashSet size <END>
+<START> HashSet size iterator iterator iterator size iterator iterator iterator size iterator iterator size iterator <END>
+<START> HashSet <END>
+<START> HashSet iterator size iterator iterator iterator iterator size iterator size iterator iterator iterator size size iterator size <END>
+<START> HashSet <END>
+<START> HashSet iterator size size iterator size <END>
+<START> HashSet iterator iterator size size <END>
+<START> HashSet size iterator size iterator size size size size size size size <END>
+<START> HashSet iterator size size iterator size iterator size size iterator size iterator iterator iterator size <END>
+<START> HashSet size iterator <END>
+<START> HashSet iterator <END>
+<START> HashSet iterator iterator <END>
+<START> HashSet size size <END>
+<START> HashSet size size size iterator size iterator size size size iterator iterator iterator <END>
+<START> HashSet iterator <END>
+<START> HashSet size size size iterator size iterator size size iterator iterator iterator iterator size <END>
+<START> HashSet iterator <END>
+<START> HashSet iterator <END>
+<START> HashSet size size iterator size iterator size size iterator iterator iterator iterator size <END>
+<START> HashSet size <END>
+<START> HashSet iterator iterator iterator iterator <END>
+<START> HashSet size size iterator iterator iterator <END>

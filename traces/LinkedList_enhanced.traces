@@ -1,0 +1,367 @@
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList size toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList addLast toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList remove <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList remove <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList size listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList size add <END>
+<START> LinkedList toArray size <END>
+<START> LinkedList <END>
+<START> LinkedList add <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator size <END>
+<START> LinkedList size <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray remove <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList addLast <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList addLast <END>
+<START> LinkedList remove <END>
+<START> LinkedList <END>
+<START> LinkedList addLast <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray toArray add <END>
+<START> LinkedList toArray <END>
+<START> LinkedList listIterator listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList remove <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList addLast listIterator toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList addLast listIterator toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList size remove <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList size add size size <END>
+<START> LinkedList toArray size <END>
+<START> LinkedList remove <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList listIterator listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList remove <END>
+<START> LinkedList addLast listIterator toArray <END>
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList size add size size <END>
+<START> LinkedList toArray size <END>
+<START> LinkedList listIterator toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray remove <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList size listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList remove <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList size <END>
+<START> LinkedList toArray size <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList addLast <END>
+<START> LinkedList <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList <END>
+<START> LinkedList toArray addLast <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList add toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList remove <END>
+<START> LinkedList <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray toArray toArray remove <END>
+<START> LinkedList toArray toArray toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList listIterator toArray <END>
+<START> LinkedList toArray remove toArray toArray <END>
+<START> LinkedList toArray remove toArray size <END>
+<START> LinkedList <END>
+<START> LinkedList remove <END>
+<START> LinkedList remove <END>
+<START> LinkedList <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList remove <END>
+<START> LinkedList toArray remove toArray <END>
+<START> LinkedList toArray size <END>
+<START> LinkedList addLast toArray remove listIterator listIterator <END>
+<START> LinkedList addLast toArray remove listIterator listIterator <END>
+<START> LinkedList addLast toArray remove listIterator listIterator <END>
+<START> LinkedList addLast toArray remove listIterator listIterator <END>
+<START> LinkedList addLast toArray remove listIterator listIterator <END>
+<START> LinkedList addLast toArray remove listIterator listIterator <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList add:TRUE size <END>
+<START> LinkedList add:TRUE size <END>
+<START> LinkedList add:TRUE size <END>
+<START> LinkedList add:TRUE size <END>
+<START> LinkedList size listIterator <END>
+<START> LinkedList size toArray remove:FALSE toArray size <END>
+<START> LinkedList size toArray remove:FALSE toArray size <END>
+<START> LinkedList listIterator toArray listIterator add remove toArray add:TRUE toArray addLast <END>
+<START> LinkedList listIterator toArray listIterator add remove toArray add:TRUE toArray addLast <END>
+<START> LinkedList listIterator toArray listIterator add remove toArray add:TRUE toArray addLast <END>
+<START> LinkedList add remove:FALSE <END>
+<START> LinkedList add remove:FALSE <END>
+<START> LinkedList add size toArray remove:TRUE <END>
+<START> LinkedList add size toArray remove:TRUE <END>
+<START> LinkedList remove addLast remove:FALSE listIterator remove <END>
+<START> LinkedList remove:TRUE <END>
+<START> LinkedList addLast remove <END>
+<START> LinkedList addLast toArray remove listIterator listIterator <END>
+<START> LinkedList addLast <END>
+<START> LinkedList listIterator size add toArray <END>
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList add listIterator size add remove remove toArray <END>
+<START> LinkedList listIterator toArray <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList <END>
+<START> LinkedList size listIterator <END>
+<START> LinkedList <END>
+<START> LinkedList size <END>
+<START> LinkedList size toArray toArray size <END>
+<START> LinkedList toArray <END>
+<START> LinkedList add size toArray remove toArray toArray <END>
+<START> LinkedList listIterator size add toArray <END>
+<START> LinkedList listIterator size add toArray <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator size size add toArray <END>
+<START> LinkedList listIterator toArray listIterator add remove toArray toArray addLast <END>
+<START> LinkedList <END>
+<START> LinkedList add <END>
+<START> LinkedList size <END>
+<START> LinkedList toArray toArray <END>
+<START> LinkedList addLast <END>
+<START> LinkedList listIterator size size add toArray <END>
+<START> LinkedList listIterator add size size size add toArray remove <END>
+<START> LinkedList add size toArray <END>
+<START> LinkedList add listIterator size add remove listIterator <END>
+<START> LinkedList listIterator add add toArray <END>
+<START> LinkedList toArray add size toArray remove toArray add remove toArray <END>
+<START> LinkedList remove addLast toArray listIterator remove remove <END>
+<START> LinkedList addLast <END>
+<START> LinkedList addLast toArray <END>
+<START> LinkedList <END>
+<START> LinkedList <END>
+<START> LinkedList addLast add <END>
+<START> LinkedList addLast <END>
+<START> LinkedList toArray add remove <END>
+<START> LinkedList add listIterator size add remove <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList addLast addLast toArray <END>
+<START> LinkedList add size listIterator listIterator remove size listIterator <END>
+<START> LinkedList listIterator <END>
+<START> LinkedList addLast <END>
+<START> LinkedList size listIterator size listIterator listIterator listIterator size <END>
+<START> LinkedList addLast add <END>
+<START> LinkedList addLast <END>
+<START> LinkedList toArray add remove <END>
+<START> LinkedList remove addLast listIterator remove <END>
+<START> LinkedList <END>
+<START> LinkedList addLast <END>
+<START> LinkedList listIterator listIterator size add remove listIterator size <END>
+<START> LinkedList add toArray addLast size remove size listIterator add toArray listIterator size <END>
+<START> LinkedList <END>
+<START> LinkedList addLast toArray listIterator addLast <END>
+<START> LinkedList addLast remove <END>
+<START> LinkedList toArray remove <END>
+<START> LinkedList toArray addLast <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray listIterator <END>
+<START> LinkedList remove remove toArray remove toArray <END>
+<START> LinkedList toArray addLast size add listIterator add toArray remove addLast <END>
+<START> LinkedList <END>
+<START> LinkedList listIterator add size size add size add listIterator toArray addLast <END>
+<START> LinkedList listIterator add size size size add listIterator toArray <END>
+<START> LinkedList size <END>
+<START> LinkedList <END>
+<START> LinkedList toArray listIterator addLast toArray addLast remove <END>
+<START> LinkedList <END>
+<START> LinkedList addLast toArray listIterator addLast addLast remove <END>
+<START> LinkedList toArray remove <END>
+<START> LinkedList addLast listIterator remove remove <END>
+<START> LinkedList <END>
+<START> LinkedList addLast <END>
+<START> LinkedList listIterator add size add addLast toArray remove remove toArray toArray <END>
+<START> LinkedList <END>
+<START> LinkedList toArray listIterator addLast addLast remove <END>
+<START> LinkedList size <END>
+<START> LinkedList toArray <END>
+<START> LinkedList toArray listIterator size add toArray remove <END>
+<START> LinkedList toArray listIterator size add toArray remove remove toArray <END>
+<START> LinkedList toArray listIterator size add toArray addLast remove <END>
+<START> LinkedList addLast <END>
+<START> LinkedList addLast toArray listIterator remove <END>
+<START> LinkedList toArray remove <END>
+<START> LinkedList size toArray listIterator size size add remove remove toArray <END>
+<START> LinkedList toArray listIterator size add toArray addLast remove listIterator <END>
+<START> LinkedList toArray add toArray <END>

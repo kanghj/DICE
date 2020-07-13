@@ -1,0 +1,295 @@
+<START> HashMap size entrySet get values <END>
+<START> HashMap remove values entrySet remove <END>
+<START> HashMap get <END>
+<START> HashMap values entrySet size get size size put <END>
+<START> HashMap entrySet remove values size put put putAll <END>
+<START> HashMap size <END>
+<START> HashMap put put <END>
+<START> HashMap <END>
+<START> HashMap values size <END>
+<START> HashMap size <END>
+<START> HashMap remove put <END>
+<START> HashMap remove <END>
+<START> HashMap size size entrySet values entrySet entrySet size get values get size values <END>
+<START> HashMap size <END>
+<START> HashMap put <END>
+<START> HashMap <END>
+<START> HashMap size <END>
+<START> HashMap size <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap size <END>
+<START> HashMap put put <END>
+<START> HashMap put putAll put values <END>
+<START> HashMap size <END>
+<START> HashMap values get values size entrySet entrySet values entrySet get <END>
+<START> HashMap values entrySet entrySet values get get entrySet entrySet values values values remove size <END>
+<START> HashMap <END>
+<START> HashMap entrySet size remove put values putAll entrySet values values remove values remove put putAll size entrySet entrySet entrySet put putAll entrySet remove size putAll remove remove values putAll put entrySet size entrySet size entrySet values get put size size putAll putAll entrySet size values remove entrySet get <END>
+<START> HashMap size size <END>
+<START> HashMap put put <END>
+<START> HashMap entrySet size remove put values putAll entrySet values values remove values remove put putAll <END>
+<START> HashMap size putAll size get <END>
+<START> HashMap entrySet <END>
+<START> HashMap <END>
+<START> HashMap remove remove put values putAll entrySet entrySet size entrySet put get remove entrySet <END>
+<START> HashMap values remove entrySet put remove values entrySet values entrySet remove get values get <END>
+<START> HashMap get <END>
+<START> HashMap size values entrySet size values size putAll <END>
+<START> HashMap values size size entrySet putAll get values size <END>
+<START> HashMap remove entrySet put <END>
+<START> HashMap put <END>
+<START> HashMap put <END>
+<START> HashMap get entrySet <END>
+<START> HashMap put <END>
+<START> HashMap entrySet size size entrySet size size <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap put <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap put put <END>
+<START> HashMap size <END>
+<START> HashMap put put <END>
+<START> HashMap size entrySet <END>
+<START> HashMap entrySet put putAll entrySet values <END>
+<START> HashMap entrySet entrySet entrySet size putAll entrySet get values values entrySet values entrySet entrySet entrySet get putAll put get putAll put putAll values entrySet get values putAll putAll get put get get put put entrySet get entrySet put put <END>
+<START> HashMap put size entrySet put size entrySet size get values entrySet get put put values <END>
+<START> HashMap remove get remove size remove values size <END>
+<START> HashMap values entrySet put get remove get get values values size get entrySet entrySet entrySet put values get get values entrySet values put put values get get entrySet entrySet values values values values <END>
+<START> HashMap putAll put values putAll entrySet entrySet size remove values get putAll remove <END>
+<START> HashMap entrySet remove put get remove put remove size values put size entrySet size entrySet entrySet entrySet get entrySet entrySet get get <END>
+<START> HashMap get entrySet put <END>
+<START> HashMap entrySet put get put put values put entrySet entrySet entrySet <END>
+<START> HashMap putAll putAll values values get putAll put putAll <END>
+<START> HashMap <END>
+<START> HashMap size size entrySet <END>
+<START> HashMap remove remove put values putAll entrySet entrySet size entrySet put get remove entrySet <END>
+<START> HashMap values remove entrySet put remove values entrySet values entrySet remove get values get <END>
+<START> HashMap size putAll size entrySet values get entrySet entrySet get putAll entrySet entrySet entrySet put <END>
+<START> HashMap remove values remove entrySet size putAll entrySet size get putAll remove putAll put entrySet get entrySet putAll values get values <END>
+<START> HashMap put get size putAll entrySet values values values entrySet values entrySet values <END>
+<START> HashMap remove size size get get <END>
+<START> HashMap get values size put size entrySet remove put remove size <END>
+<START> HashMap values <END>
+<START> HashMap get put <END>
+<START> HashMap get put put <END>
+<START> HashMap get entrySet entrySet size putAll values get <END>
+<START> HashMap entrySet size remove put values putAll entrySet values values remove values remove put putAll <END>
+<START> HashMap <END>
+<START> HashMap remove put <END>
+<START> HashMap remove put <END>
+<START> HashMap values remove <END>
+<START> HashMap entrySet <END>
+<START> HashMap entrySet entrySet entrySet values remove <END>
+<START> HashMap remove get remove size remove values size <END>
+<START> HashMap values entrySet put get remove get get values values entrySet entrySet entrySet put values get get values entrySet values put put values get get entrySet entrySet values values values values <END>
+<START> HashMap values size entrySet putAll put get remove get putAll get values remove <END>
+<START> HashMap size remove get values values entrySet put entrySet size size get <END>
+<START> HashMap get putAll putAll get putAll size putAll size putAll size putAll get get get entrySet putAll entrySet size entrySet entrySet size get putAll putAll putAll put get entrySet putAll size get entrySet size <END>
+<START> HashMap remove put get <END>
+<START> HashMap remove values remove values get entrySet get get get values size values entrySet entrySet entrySet entrySet get values entrySet put entrySet entrySet values put <END>
+<START> HashMap size putAll <END>
+<START> HashMap remove get entrySet get <END>
+<START> HashMap get entrySet put <END>
+<START> HashMap entrySet get put put get values put entrySet entrySet entrySet <END>
+<START> HashMap remove put putAll entrySet get get putAll values get putAll size get put values putAll values putAll get <END>
+<START> HashMap <END>
+<START> HashMap remove remove put putAll get putAll values get <END>
+<START> HashMap size remove get values values entrySet put entrySet size size get <END>
+<START> HashMap get putAll putAll get putAll size putAll size putAll size putAll get size get get entrySet putAll entrySet size entrySet entrySet size get putAll putAll putAll put get entrySet putAll size get entrySet <END>
+<START> HashMap remove values size put putAll values values entrySet <END>
+<START> HashMap get size entrySet putAll <END>
+<START> HashMap remove remove remove put values putAll entrySet entrySet size entrySet put get remove <END>
+<START> HashMap values remove entrySet put remove entrySet values entrySet remove get values get put <END>
+<START> HashMap values get values size entrySet entrySet values entrySet get <END>
+<START> HashMap values entrySet entrySet values get get entrySet entrySet values values values remove size <END>
+<START> HashMap get putAll putAll get putAll size putAll size putAll size putAll get get get entrySet putAll entrySet size entrySet entrySet size get putAll putAll putAll put get entrySet putAll size get entrySet size <END>
+<START> HashMap size remove get values values entrySet put entrySet size size get <END>
+<START> HashMap get putAll putAll get putAll size putAll size putAll size putAll get get get entrySet putAll entrySet size entrySet entrySet size get putAll putAll putAll put get entrySet putAll size get entrySet size <END>
+<START> HashMap size remove get values values entrySet put entrySet size size <END>
+<START> HashMap entrySet get entrySet remove get values entrySet put put values entrySet get values putAll size entrySet get size remove put <END>
+<START> HashMap values values remove entrySet size remove entrySet values <END>
+<START> HashMap putAll putAll entrySet entrySet <END>
+<START> HashMap entrySet entrySet remove get values entrySet put put values entrySet get size entrySet get size remove put <END>
+<START> HashMap get putAll putAll get putAll putAll size putAll size putAll get size get get entrySet putAll entrySet size entrySet size get putAll putAll put get entrySet putAll size get entrySet entrySet <END>
+<START> HashMap size remove get values values entrySet entrySet size get <END>
+<START> HashMap remove size get putAll entrySet size put put values size size values get size get entrySet get get entrySet remove remove get entrySet entrySet values putAll get put get put entrySet putAll <END>
+<START> HashMap get entrySet put <END>
+<START> HashMap entrySet put get put put values put entrySet entrySet entrySet <END>
+<START> HashMap get entrySet values <END>
+<START> HashMap remove size get put size remove <END>
+<START> HashMap get remove size remove values size <END>
+<START> HashMap values entrySet put get remove get put get values values entrySet entrySet put values get get entrySet values put put values get get entrySet entrySet values values values <END>
+<START> HashMap remove put get values <END>
+<START> HashMap remove putAll <END>
+<START> HashMap values size entrySet entrySet <END>
+<START> HashMap get size putAll size remove <END>
+<START> HashMap size <END>
+<START> HashMap remove get <END>
+<START> HashMap remove put get values <END>
+<START> HashMap putAll <END>
+<START> HashMap size size <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap remove entrySet remove remove size entrySet <END>
+<START> HashMap put <END>
+<START> HashMap entrySet putAll <END>
+<START> HashMap size size put <END>
+<START> HashMap <END>
+<START> HashMap size entrySet entrySet <END>
+<START> HashMap get size putAll size remove <END>
+<START> HashMap remove <END>
+<START> HashMap remove put get values <END>
+<START> HashMap put get values <END>
+<START> HashMap putAll putAll <END>
+<START> HashMap putAll <END>
+<START> HashMap remove put get <END>
+<START> HashMap remove put get values <END>
+<START> HashMap putAll <END>
+<START> HashMap remove put get values <END>
+<START> HashMap putAll <END>
+<START> HashMap remove <END>
+<START> HashMap remove put get values <END>
+<START> HashMap remove entrySet remove <END>
+<START> HashMap entrySet values size size size values <END>
+<START> HashMap entrySet entrySet values remove putAll size remove put <END>
+<START> HashMap entrySet putAll remove get size entrySet <END>
+<START> HashMap <END>
+<START> HashMap putAll <END>
+<START> HashMap values <END>
+<START> HashMap entrySet <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap remove put get values <END>
+<START> HashMap <END>
+<START> HashMap remove get values <END>
+<START> HashMap putAll <END>
+<START> HashMap values <END>
+<START> HashMap entrySet <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap values <END>
+<START> HashMap entrySet <END>
+<START> HashMap remove entrySet get put size <END>
+<START> HashMap remove get <END>
+<START> HashMap values entrySet remove remove putAll <END>
+<START> HashMap <END>
+<START> HashMap get putAll put get remove remove entrySet remove get remove <END>
+<START> HashMap values <END>
+<START> HashMap entrySet <END>
+<START> HashMap remove entrySet get <END>
+<START> HashMap putAll <END>
+<START> HashMap remove put get values <END>
+<START> HashMap remove get <END>
+<START> HashMap put <END>
+<START> HashMap get <END>
+<START> HashMap putAll <END>
+<START> HashMap remove put get values <END>
+<START> HashMap remove get entrySet <END>
+<START> HashMap size <END>
+<START> HashMap get values <END>
+<START> HashMap get values <END>
+<START> HashMap get values <END>
+<START> HashMap get values <END>
+<START> HashMap entrySet <END>
+<START> HashMap entrySet <END>
+<START> HashMap size putAll get entrySet values values put put values <END>
+<START> HashMap size putAll get entrySet values values put put values <END>
+<START> HashMap get values size putAll values containsKey:FALSE values putAll containsKey:FALSE containsKey:FALSE size containsKey:FALSE put get putAll remove putAll put put values remove containsKey:FALSE put entrySet putAll entrySet values put remove putAll putAll put containsKey:TRUE remove containsKey:FALSE putAll containsKey:FALSE get entrySet putAll put putAll containsKey:FALSE get putAll values put putAll remove putAll get remove get put get size size put containsKey:TRUE values putAll remove get remove containsKey:FALSE values put get size <END>
+<START> HashMap containsKey:FALSE entrySet remove values entrySet put get containsKey:FALSE put containsKey:FALSE put put entrySet <END>
+<START> HashMap containsKey:FALSE entrySet remove values entrySet put get containsKey:FALSE put containsKey:FALSE put put entrySet <END>
+<START> HashMap get values size putAll values containsKey:FALSE values putAll containsKey:FALSE containsKey:FALSE size containsKey:FALSE put get putAll remove putAll put put values remove containsKey:FALSE put entrySet putAll entrySet values put remove putAll putAll put containsKey:TRUE remove containsKey:FALSE putAll containsKey:FALSE get entrySet putAll put putAll containsKey:FALSE get putAll values put putAll remove putAll get remove get put get size size put containsKey:TRUE values putAll remove get remove containsKey:FALSE values put get size <END>
+<START> HashMap size putAll get entrySet values values put put values <END>
+<START> HashMap size putAll get entrySet values values put put values <END>
+<START> HashMap containsKey:FALSE entrySet remove values entrySet put get containsKey:FALSE put containsKey:FALSE put put entrySet <END>
+<START> HashMap containsKey:FALSE entrySet remove values entrySet put get containsKey:FALSE put containsKey:FALSE put put entrySet <END>
+<START> HashMap containsKey:FALSE entrySet remove values entrySet put get containsKey:FALSE put containsKey:FALSE put put entrySet <END>
+<START> HashMap containsKey:FALSE entrySet remove values entrySet put get containsKey:FALSE put containsKey:FALSE put put entrySet <END>
+<START> HashMap values containsKey:FALSE entrySet size size values containsKey:FALSE remove size get putAll entrySet entrySet <END>
+<START> HashMap values containsKey:FALSE entrySet size size values containsKey:FALSE remove size get putAll entrySet entrySet <END>
+<START> HashMap values containsKey:FALSE entrySet size size values containsKey:FALSE remove size get putAll entrySet entrySet <END>
+<START> HashMap entrySet values get containsKey:FALSE putAll values values containsKey:FALSE values put entrySet entrySet <END>
+<START> HashMap putAll size values entrySet values size remove entrySet values remove size entrySet putAll put put get putAll size entrySet size putAll put entrySet putAll get remove <END>
+<START> HashMap <END>
+<START> HashMap get values <END>
+<START> HashMap putAll <END>
+<START> HashMap entrySet values size entrySet putAll get put values putAll <END>
+<START> HashMap values remove get get size values remove remove remove size put entrySet get entrySet get remove putAll put remove put get entrySet putAll entrySet entrySet putAll entrySet put get size putAll putAll entrySet put putAll values remove size putAll size get putAll remove put put size putAll putAll entrySet <END>
+<START> HashMap values values get put put values remove put values get values remove size entrySet entrySet size get remove values get values <END>
+<START> HashMap entrySet <END>
+<START> HashMap entrySet remove values entrySet put get put put put entrySet <END>
+<START> HashMap get values size putAll values values putAll size put get putAll remove putAll put put values remove put entrySet putAll entrySet values put remove putAll putAll put remove putAll get entrySet putAll put putAll get putAll values put putAll remove putAll get remove get put get size size put values putAll remove get remove values put get size <END>
+<START> HashMap values remove get get size values remove remove remove entrySet size put entrySet get entrySet get remove putAll put remove <END>
+<START> HashMap values values get put put values remove put values get remove values remove size entrySet entrySet size get remove values get values <END>
+<START> HashMap values values remove put putAll putAll put entrySet size putAll putAll get size size put size putAll put entrySet put get put values put values putAll entrySet putAll putAll <END>
+<START> HashMap values size putAll put put values values get put get entrySet entrySet entrySet size put putAll get put get putAll entrySet entrySet remove putAll putAll putAll putAll put values get remove putAll values put get putAll remove entrySet putAll get values get get <END>
+<START> HashMap values values values size putAll remove put put <END>
+<START> HashMap values entrySet remove entrySet <END>
+<START> HashMap put remove put size size putAll put entrySet putAll entrySet entrySet get get put putAll get entrySet putAll get <END>
+<START> HashMap remove values entrySet put get entrySet values putAll get size put values get size <END>
+<START> HashMap values size values size remove size remove entrySet values put get get remove <END>
+<START> HashMap entrySet get entrySet size remove put put entrySet put remove size put put values entrySet size put size entrySet put remove get putAll putAll entrySet put put putAll entrySet size entrySet putAll values put size put entrySet get size entrySet putAll size putAll putAll putAll putAll putAll entrySet entrySet values put get put get put get <END>
+<START> HashMap putAll entrySet <END>
+<START> HashMap remove putAll <END>
+<START> HashMap entrySet <END>
+<START> HashMap entrySet get entrySet size remove put entrySet put remove put put entrySet size put size entrySet put remove get putAll putAll entrySet put put putAll entrySet size entrySet putAll values put size put entrySet get size entrySet putAll size putAll putAll putAll entrySet entrySet values put put get put <END>
+<START> HashMap entrySet values get putAll values values values put entrySet entrySet <END>
+<START> HashMap entrySet size <END>
+<START> HashMap size get size remove values <END>
+<START> HashMap put get put remove put entrySet remove entrySet values remove values entrySet entrySet values put values put entrySet entrySet entrySet remove size put put values size size size remove remove remove remove entrySet entrySet values put remove size size remove <END>
+<START> HashMap remove size remove size size values <END>
+<START> HashMap size remove values remove remove get get <END>
+<START> HashMap put remove put size size putAll put entrySet putAll entrySet entrySet get get put putAll get entrySet putAll get <END>
+<START> HashMap remove values entrySet put get entrySet values putAll get size put values get size <END>
+<START> HashMap putAll put get values putAll values put values remove entrySet entrySet size remove <END>
+<START> HashMap putAll get size entrySet putAll values putAll get remove size put entrySet put putAll size remove remove <END>
+<START> HashMap remove size remove size size values size put get size size put remove entrySet entrySet entrySet size entrySet <END>
+<START> HashMap size remove values remove remove get get <END>
+<START> HashMap values size values size remove size remove entrySet values put get get remove <END>
+<START> HashMap entrySet get entrySet size remove put put entrySet put remove size put put values entrySet size put size entrySet put remove get putAll putAll entrySet put put putAll entrySet size entrySet putAll values put size put entrySet get size entrySet putAll size putAll putAll putAll putAll putAll entrySet entrySet values put get put get put get <END>
+<START> HashMap values size values size remove size remove entrySet values <END>
+<START> HashMap entrySet get entrySet size remove put put entrySet put remove size put put values entrySet <END>
+<START> HashMap entrySet remove values entrySet put get put put put entrySet <END>
+<START> HashMap get values size putAll values values size put get putAll remove putAll put put values remove put entrySet putAll entrySet values put remove putAll putAll put remove putAll get entrySet putAll put putAll get putAll values put putAll remove get remove get put get size size put values putAll remove get remove values put get size <END>
+<START> HashMap entrySet <END>
+<START> HashMap get entrySet size remove put entrySet put remove put put entrySet size put size entrySet put remove get putAll putAll entrySet put put putAll entrySet size entrySet putAll values put size put entrySet get size entrySet putAll size putAll putAll putAll entrySet entrySet values put put get put <END>
+<START> HashMap entrySet <END>
+<START> HashMap get entrySet size remove put entrySet put remove put put entrySet size put size entrySet put remove get putAll putAll entrySet put put putAll entrySet size entrySet putAll values put size put entrySet get size entrySet putAll size putAll putAll putAll entrySet entrySet values put put get put <END>
+<START> HashMap size put get values <END>
+<START> HashMap size put entrySet get <END>
+<START> HashMap <END>
+<START> HashMap putAll size entrySet values size remove values remove entrySet putAll put get putAll entrySet size putAll put entrySet putAll get remove put <END>
+<START> HashMap put values values entrySet remove entrySet putAll size put entrySet remove values put remove put putAll put remove get get putAll <END>
+<START> HashMap values remove putAll putAll values values values entrySet size put size put entrySet size values values putAll size putAll put entrySet putAll putAll remove putAll putAll putAll values values put putAll put entrySet entrySet entrySet putAll <END>
+<START> HashMap get values values remove size get get <END>
+<START> HashMap remove entrySet get size values size entrySet put get <END>
+<START> HashMap values size <END>
+<START> HashMap size values get putAll remove entrySet put size size size size remove entrySet entrySet values remove putAll values put get put remove values entrySet values putAll put remove putAll entrySet size values <END>
+<START> HashMap entrySet size entrySet get size size put entrySet put putAll get put entrySet put values values entrySet get values get get size size size entrySet put <END>
+<START> HashMap <END>
+<START> HashMap putAll size values entrySet values size remove entrySet entrySet putAll put put get putAll entrySet size putAll put entrySet putAll get remove put put <END>
+<START> HashMap values entrySet entrySet put entrySet size <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap put <END>
+<START> HashMap <END>
+<START> HashMap get put put get <END>
+<START> HashMap remove get get <END>
+<START> HashMap <END>
+<START> HashMap remove get put remove <END>
+<START> HashMap remove remove remove put put remove <END>
+<START> HashMap get <END>
+<START> HashMap get remove put <END>
+<START> HashMap remove put put put remove get <END>
+<START> HashMap <END>
+<START> HashMap <END>
+<START> HashMap remove <END>
+<START> HashMap <END>
+<START> HashMap remove <END>
+<START> HashMap remove put get put <END>
+<START> HashMap put remove <END>
+<START> HashMap get <END>

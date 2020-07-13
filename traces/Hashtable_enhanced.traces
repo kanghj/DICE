@@ -1,0 +1,166 @@
+<START> Hashtable <END>
+<START> Hashtable clone clone get clone get clone <END>
+<START> Hashtable clone remove get <END>
+<START> Hashtable get <END>
+<START> Hashtable <END>
+<START> Hashtable put clone clone put <END>
+<START> Hashtable get <END>
+<START> Hashtable get <END>
+<START> Hashtable clone clone <END>
+<START> Hashtable remove <END>
+<START> Hashtable clone clone remove get <END>
+<START> Hashtable get clone clone <END>
+<START> Hashtable clone put remove put clone put get <END>
+<START> Hashtable put <END>
+<START> Hashtable put put clone clone <END>
+<START> Hashtable get <END>
+<START> Hashtable clone put remove put clone put get <END>
+<START> Hashtable get <END>
+<START> Hashtable clone remove put clone put get <END>
+<START> Hashtable clone put remove put clone put get <END>
+<START> Hashtable remove <END>
+<START> Hashtable remove remove remove clone remove put <END>
+<START> Hashtable clone put remove put clone put get <END>
+<START> Hashtable get <END>
+<START> Hashtable clone <END>
+<START> Hashtable hashCode hashCode get clone get clone hashCode clone remove clone hashCode remove hashCode remove put put clone remove clone <END>
+<START> Hashtable hashCode get remove hashCode clone remove <END>
+<START> Hashtable hashCode get remove hashCode clone remove <END>
+<START> Hashtable <END>
+<START> Hashtable remove hashCode remove remove put hashCode get <END>
+<START> Hashtable remove get get remove hashCode clone get clone clone remove remove hashCode get <END>
+<START> Hashtable clone get hashCode get clone clone put hashCode hashCode <END>
+<START> Hashtable clone put hashCode hashCode clone <END>
+<START> Hashtable hashCode get clone clone get clone hashCode hashCode clone hashCode remove hashCode remove put put remove clone <END>
+<START> Hashtable remove get get remove hashCode clone get clone clone remove remove hashCode get <END>
+<START> Hashtable remove <END>
+<START> Hashtable get <END>
+<START> Hashtable hashCode <END>
+<START> Hashtable put remove <END>
+<START> Hashtable put remove hashCode get clone hashCode remove clone <END>
+<START> Hashtable <END>
+<START> Hashtable <END>
+<START> Hashtable hashCode hashCode hashCode <END>
+<START> Hashtable <END>
+<START> Hashtable <END>
+<START> Hashtable get remove hashCode <END>
+<START> Hashtable get hashCode remove clone <END>
+<START> Hashtable remove hashCode remove remove put hashCode get <END>
+<START> Hashtable hashCode hashCode get clone clone get clone hashCode hashCode clone remove clone hashCode remove hashCode <END>
+<START> Hashtable hashCode clone clone get clone hashCode hashCode clone hashCode remove put put remove clone <END>
+<START> Hashtable clone put <END>
+<START> Hashtable hashCode get clone clone get clone hashCode hashCode clone clone hashCode remove hashCode remove put put remove clone <END>
+<START> Hashtable hashCode get clone clone get clone hashCode hashCode clone clone hashCode remove hashCode remove put put remove clone <END>
+<START> Hashtable hashCode hashCode get clone clone get clone hashCode hashCode clone clone hashCode remove hashCode remove put put clone remove clone <END>
+<START> Hashtable hashCode hashCode get clone clone get clone hashCode hashCode clone clone hashCode remove hashCode <END>
+<START> Hashtable clone get get clone put hashCode remove get remove hashCode <END>
+<START> Hashtable remove clone remove clone put hashCode <END>
+<START> Hashtable clone remove clone clone get put get <END>
+<START> Hashtable put put get remove get put remove hashCode remove put <END>
+<START> Hashtable get put clone put remove <END>
+<START> Hashtable put get <END>
+<START> Hashtable hashCode get clone clone get clone hashCode hashCode clone clone hashCode remove hashCode <END>
+<START> Hashtable hashCode hashCode get clone clone get clone hashCode hashCode clone clone hashCode remove hashCode remove put put clone remove clone <END>
+<START> Hashtable get put clone put remove <END>
+<START> Hashtable put get <END>
+<START> Hashtable get put clone put remove <END>
+<START> Hashtable clone get get hashCode get clone <END>
+<START> Hashtable clone put <END>
+<START> Hashtable clone get hashCode get clone clone clone put hashCode hashCode <END>
+<START> Hashtable clone put hashCode hashCode clone <END>
+<START> Hashtable put clone hashCode get clone get <END>
+<START> Hashtable get put clone put remove <END>
+<START> Hashtable clone get hashCode get clone clone clone get put <END>
+<START> Hashtable clone clone put <END>
+<START> Hashtable hashCode put hashCode clone clone put hashCode <END>
+<START> Hashtable clone hashCode <END>
+<START> Hashtable hashCode hashCode get clone clone get clone hashCode hashCode clone clone hashCode remove hashCode remove put put clone remove clone <END>
+<START> Hashtable remove <END>
+<START> Hashtable clone get hashCode get clone clone clone get put <END>
+<START> Hashtable put <END>
+<START> Hashtable remove <END>
+<START> Hashtable clone hashCode get <END>
+<START> Hashtable hashCode clone clone put <END>
+<START> Hashtable hashCode hashCode get clone clone get clone hashCode hashCode clone clone hashCode remove hashCode remove put put clone remove clone <END>
+<START> Hashtable <END>
+<START> Hashtable clone get hashCode get put hashCode put hashCode put <END>
+<START> Hashtable clone put hashCode clone <END>
+<START> Hashtable hashCode hashCode clone remove hashCode remove hashCode <END>
+<START> Hashtable remove get put get <END>
+<START> Hashtable get put get remove remove get <END>
+<START> Hashtable remove remove <END>
+<START> Hashtable <END>
+<START> Hashtable remove get <END>
+<START> Hashtable get put remove put <END>
+<START> Hashtable get put put <END>
+<START> Hashtable remove get <END>
+<START> Hashtable put put get <END>
+<START> Hashtable get put remove put <END>
+<START> Hashtable get put <END>
+<START> Hashtable get put put <END>
+<START> Hashtable <END>
+<START> Hashtable get put put <END>
+<START> Hashtable get put get remove put get get <END>
+<START> Hashtable get put remove get <END>
+<START> Hashtable get put get remove get put get <END>
+<START> Hashtable get put remove get get <END>
+<START> Hashtable remove put clone clone clone remove remove <END>
+<START> Hashtable remove put clone clone clone remove remove <END>
+<START> Hashtable remove put clone clone clone remove remove <END>
+<START> Hashtable remove put clone clone clone remove remove <END>
+<START> Hashtable remove put clone clone clone remove remove <END>
+<START> Hashtable remove put clone clone clone remove remove <END>
+<START> Hashtable <END>
+<START> Hashtable <END>
+<START> Hashtable <END>
+<START> Hashtable hashCode isEmpty:TRUE remove isEmpty:TRUE hashCode get get hashCode clone isEmpty:TRUE hashCode hashCode hashCode clone hashCode get hashCode clone clone remove clone clone get hashCode remove hashCode isEmpty:TRUE clone remove isEmpty:TRUE hashCode hashCode <END>
+<START> Hashtable hashCode isEmpty:TRUE remove isEmpty:TRUE hashCode get get hashCode clone isEmpty:TRUE hashCode hashCode hashCode clone hashCode get hashCode clone clone remove clone clone get hashCode remove hashCode isEmpty:TRUE clone remove isEmpty:TRUE hashCode hashCode <END>
+<START> Hashtable hashCode isEmpty:TRUE remove isEmpty:TRUE hashCode get get hashCode clone isEmpty:TRUE hashCode hashCode hashCode clone hashCode get hashCode clone clone remove clone clone get hashCode remove hashCode isEmpty:TRUE clone remove isEmpty:TRUE hashCode hashCode <END>
+<START> Hashtable hashCode isEmpty:TRUE remove isEmpty:TRUE hashCode get get hashCode clone isEmpty:TRUE hashCode hashCode hashCode clone hashCode get hashCode clone clone remove clone clone get hashCode remove hashCode isEmpty:TRUE clone remove isEmpty:TRUE hashCode hashCode <END>
+<START> Hashtable hashCode isEmpty:TRUE remove isEmpty:TRUE hashCode get get hashCode clone isEmpty:TRUE hashCode hashCode hashCode clone hashCode get hashCode clone clone remove clone clone get hashCode remove hashCode isEmpty:TRUE clone remove isEmpty:TRUE hashCode hashCode <END>
+<START> Hashtable hashCode isEmpty:TRUE remove isEmpty:TRUE hashCode get get hashCode clone isEmpty:TRUE hashCode hashCode hashCode clone hashCode get hashCode clone clone remove clone clone get hashCode remove hashCode isEmpty:TRUE clone remove isEmpty:TRUE hashCode hashCode <END>
+<START> Hashtable clone hashCode isEmpty:TRUE remove isEmpty:TRUE hashCode remove hashCode get get hashCode get isEmpty:TRUE hashCode isEmpty:TRUE hashCode isEmpty:TRUE clone get isEmpty:TRUE hashCode isEmpty:TRUE get remove remove put hashCode remove clone get hashCode hashCode get put hashCode clone clone remove put clone isEmpty:FALSE remove hashCode isEmpty:FALSE get <END>
+<START> Hashtable clone hashCode isEmpty:TRUE remove isEmpty:TRUE hashCode remove hashCode get get hashCode get isEmpty:TRUE hashCode isEmpty:TRUE hashCode isEmpty:TRUE clone get isEmpty:TRUE hashCode isEmpty:TRUE get remove remove put hashCode remove clone get hashCode hashCode get put hashCode clone clone remove put clone isEmpty:FALSE remove hashCode isEmpty:FALSE get <END>
+<START> Hashtable remove isEmpty:FALSE clone get get <END>
+<START> Hashtable isEmpty:FALSE remove put put put remove isEmpty:FALSE clone clone clone get isEmpty:FALSE clone <END>
+<START> Hashtable isEmpty:TRUE isEmpty:FALSE <END>
+<START> Hashtable <END>
+<START> Hashtable hashCode hashCode hashCode remove put hashCode hashCode clone hashCode remove get clone clone clone hashCode clone clone hashCode clone clone put put hashCode get get remove hashCode hashCode hashCode hashCode clone clone put get clone hashCode get put put put hashCode get hashCode get clone clone get hashCode put <END>
+<START> Hashtable remove put clone clone clone remove remove <END>
+<START> Hashtable <END>
+<START> Hashtable hashCode remove hashCode get get hashCode clone hashCode hashCode hashCode clone hashCode get hashCode clone clone remove clone clone get hashCode remove hashCode clone remove hashCode hashCode <END>
+<START> Hashtable put <END>
+<START> Hashtable <END>
+<START> Hashtable hashCode hashCode hashCode remove put hashCode hashCode clone hashCode remove get clone clone clone hashCode clone clone hashCode clone clone put put get get remove hashCode hashCode hashCode hashCode clone clone put get hashCode get put put put hashCode get get clone clone get hashCode put <END>
+<START> Hashtable clone hashCode remove hashCode remove hashCode get get hashCode get hashCode hashCode clone get hashCode get remove remove put hashCode remove clone get hashCode hashCode get put hashCode clone clone remove put clone remove hashCode get <END>
+<START> Hashtable remove clone hashCode clone hashCode clone get get remove hashCode hashCode remove put clone hashCode get get get remove hashCode <END>
+<START> Hashtable clone hashCode clone get get clone put remove remove <END>
+<START> Hashtable clone clone put hashCode remove get hashCode clone clone clone get put get hashCode get clone hashCode put clone hashCode get get put clone remove hashCode put remove clone get remove remove hashCode remove clone hashCode put remove hashCode remove clone hashCode hashCode hashCode put clone hashCode hashCode hashCode clone remove get hashCode put hashCode put hashCode hashCode remove clone put get put clone clone hashCode get hashCode hashCode <END>
+<START> Hashtable <END>
+<START> Hashtable put <END>
+<START> Hashtable remove get clone get hashCode remove remove hashCode put put clone remove hashCode remove get clone remove <END>
+<START> Hashtable put <END>
+<START> Hashtable <END>
+<START> Hashtable clone get clone hashCode remove get hashCode put get remove hashCode <END>
+<START> Hashtable hashCode hashCode hashCode remove put hashCode hashCode clone hashCode remove get clone clone clone hashCode clone clone hashCode clone clone put put hashCode get get remove hashCode hashCode hashCode hashCode clone clone put get clone hashCode get put put <END>
+<START> Hashtable clone hashCode hashCode remove clone clone put hashCode get hashCode hashCode clone clone put get get hashCode hashCode clone clone clone put remove clone hashCode put hashCode put hashCode clone clone get <END>
+<START> Hashtable clone clone clone clone hashCode hashCode clone hashCode hashCode remove remove clone put put hashCode clone get put clone hashCode hashCode get clone hashCode clone hashCode remove get get hashCode get hashCode put hashCode <END>
+<START> Hashtable put clone put remove remove put hashCode hashCode hashCode <END>
+<START> Hashtable clone clone put hashCode put get remove <END>
+<START> Hashtable clone hashCode hashCode remove clone clone put hashCode get hashCode hashCode clone clone get get hashCode hashCode clone clone clone put remove clone put hashCode put hashCode clone clone get <END>
+<START> Hashtable clone hashCode hashCode remove clone clone put hashCode get hashCode hashCode clone clone put get get hashCode hashCode clone clone put remove clone hashCode put hashCode put hashCode clone clone get <END>
+<START> Hashtable hashCode remove clone get hashCode get remove hashCode remove put clone <END>
+<START> Hashtable get clone clone clone clone put <END>
+<START> Hashtable clone get clone hashCode get hashCode hashCode clone hashCode clone clone remove get clone hashCode hashCode hashCode hashCode clone hashCode clone get remove hashCode clone clone hashCode hashCode clone get clone hashCode remove remove remove clone put hashCode clone <END>
+<START> Hashtable remove remove clone put hashCode get put get remove put clone remove remove get remove get hashCode remove get remove hashCode put get hashCode remove put hashCode get put clone <END>
+<START> Hashtable clone put clone clone hashCode clone clone clone clone remove hashCode clone clone clone get clone clone remove clone put <END>
+<START> Hashtable clone get clone hashCode get hashCode hashCode clone hashCode clone clone remove clone hashCode hashCode hashCode hashCode clone hashCode clone get remove hashCode clone clone hashCode hashCode clone get clone remove clone put hashCode clone get clone remove get <END>
+<START> Hashtable <END>
+<START> Hashtable hashCode hashCode put clone put put <END>
+<START> Hashtable clone clone hashCode remove hashCode clone clone remove remove clone remove <END>
+<START> Hashtable get <END>
+<START> Hashtable put hashCode put <END>
+<START> Hashtable get <END>
+<START> Hashtable put hashCode put <END>
+<START> Hashtable hashCode remove put remove hashCode put get put hashCode clone get remove hashCode get hashCode get put <END>
+<START> Hashtable clone hashCode remove hashCode hashCode remove clone put remove remove get hashCode clone get remove remove get clone put put clone clone hashCode clone hashCode clone put hashCode hashCode clone get put put put get remove clone put put remove get clone clone remove get put get hashCode clone clone clone put get clone hashCode clone hashCode hashCode clone clone put <END>
