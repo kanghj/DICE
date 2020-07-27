@@ -1,0 +1,17 @@
+1
+2
+1
+3494
+12
+3483	3483	addLast
+3483	3483	size
+3483	3483	remove
+3483	3483	add
+3483	3483	remove:TRUE
+3483	3483	remove:FALSE
+3483	3483	add:TRUE
+3483	3483	listIterator
+0	2	<START>
+3483	3483	toArray
+3483	3494	<END>
+2	3483	LinkedList
