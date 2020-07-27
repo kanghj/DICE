@@ -1,0 +1,8 @@
+USER ubuntu
+USER ubuntu
+HELP
+USER webadmin
+PASS ubuntu
+LIST
+HELP
+CDUP

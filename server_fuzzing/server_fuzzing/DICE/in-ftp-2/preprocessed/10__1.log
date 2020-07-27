@@ -1,0 +1,6 @@
+USER anonymous
+PASS ubuntu
+LIST
+TYPE 1
+MLSD test
+SIZE test

@@ -1,0 +1,17 @@
+HELP
+USER ubuntu
+USER ubuntu
+PASS ubuntu
+USER ubuntu
+HELP
+HELP
+USER ubuntu
+PASS ubuntu
+NOOP
+NOOP
+HELP
+USER anonymous
+PASS ubuntu
+REST anonymous
+LIST 
+MKD testD

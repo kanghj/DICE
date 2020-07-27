@@ -1,0 +1,7 @@
+USER anonymous
+USER anonymous
+NOOP
+PASS ubuntu
+NOOP
+LIST 
+MKD 

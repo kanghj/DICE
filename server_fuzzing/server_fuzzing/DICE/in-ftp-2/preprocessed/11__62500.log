@@ -1,0 +1,8 @@
+USER ubuntu
+USER webadmin
+USER webadmin
+HELP
+PASS ubuntu
+HELP
+REST (p{javaJavaIdentifierStart}(p{javaJavaIdentifierPart})*.)+p{javaJavaIdentifierStart}(p{javaJavaIdentifierPart})*
+SIZE test

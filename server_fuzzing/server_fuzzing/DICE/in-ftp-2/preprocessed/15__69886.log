@@ -1,0 +1,7 @@
+USER ubuntu
+PASS ubuntu
+HELP
+PASS ubuntu
+LIST
+HELP
+TYPE I

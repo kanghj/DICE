@@ -1,0 +1,20 @@
+SETUP rtsp://192.168.1.1:8554/mp3AudioTest RTSP/1.0
+CSeq: 1
+Transport: RTP/UDP; client_port= 25000
+
+PAUSE rtsp://192.168.1.1:8554/mp3AudioTest RTSP/1.0
+CSeq: 2
+Session: 000022B8
+
+PLAY rtsp://192.168.1.1:8554/mp3AudioTest RTSP/1.0
+CSeq: 3
+Session: 000022B8
+
+TEARDOWN rtsp://192.168.1.1:8554/mp3AudioTest RTSP/1.0
+CSeq: 4
+Session: 000022B8
+
+PAUSE rtsp://192.168.1.1:8554/mp3AudioTest RTSP/1.0
+CSeq: 5
+Session: 000022B8
+

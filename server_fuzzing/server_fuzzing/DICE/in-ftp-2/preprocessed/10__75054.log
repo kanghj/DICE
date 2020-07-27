@@ -1,0 +1,6 @@
+USER ubuntu
+USER webadmin
+PASS ubuntu
+LIST
+MKD testD
+CWD testD

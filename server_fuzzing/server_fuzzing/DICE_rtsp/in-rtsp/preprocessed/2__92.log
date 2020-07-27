@@ -1,0 +1,7 @@
+SETUP rtsp://192.168.1.1:8554/mp3AudioTest RTSP/1.0
+CSeq: 1
+Transport: RTP/UDP; client_port= 25000
+
+DESCRIBE rtsp://192.168.1.1:8554/mp3AudioTest RTSP/1.0
+CSeq: 2
+

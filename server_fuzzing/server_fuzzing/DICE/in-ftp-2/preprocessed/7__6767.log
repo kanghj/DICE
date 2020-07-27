@@ -1,0 +1,11 @@
+USER anonymous
+PASS ubuntu
+PASS ubuntu
+NOOP
+USER anonymous
+PASS ubuntu
+NOOP
+LIST 
+USER anonymous
+HELP
+STAT

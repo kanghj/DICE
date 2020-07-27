@@ -1,0 +1,9 @@
+NOOP
+USER anonymous
+PASS ubuntu
+USER webadmin
+HELP
+USER webadmin
+PASS ubuntu
+QUIT
+USER ubuntu

@@ -1,0 +1,8 @@
+USER ubuntu
+USER anonymous
+PASS ubuntu
+HELP
+HELP
+PASS ubuntu
+LIST
+STAT

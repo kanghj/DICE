@@ -1,0 +1,4 @@
+USER ubuntu
+PASS ubuntu
+HELP
+MKD (p{javaJavaIdentifierStart}(p{javaJavaIdentifierPart})*.)+p{javaJavaIdentifierStart}(p{javaJavaIdentifierPart})*

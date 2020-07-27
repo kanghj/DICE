@@ -1,0 +1,8 @@
+3 tearDown 5
+3 tearDown 1
+2 tearDown 1
+1 setup 2
+3 play 3
+2 pause 3
+2 play 3
+1 setup 3

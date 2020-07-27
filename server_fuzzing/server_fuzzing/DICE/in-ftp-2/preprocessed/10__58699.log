@@ -1,0 +1,5 @@
+USER ubuntu
+PASS ubuntu
+LIST 
+USER ubuntu
+HELP

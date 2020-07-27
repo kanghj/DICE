@@ -1,0 +1,6 @@
+USER ubuntu
+USER webadmin
+USER ubuntu
+PASS ubuntu
+REST webadmin
+MKD N

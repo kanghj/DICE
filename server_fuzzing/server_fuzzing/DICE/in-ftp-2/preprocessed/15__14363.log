@@ -1,0 +1,4 @@
+HELP
+USER anonymous
+PASS ubuntu
+SIZE test

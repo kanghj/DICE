@@ -1,0 +1,7 @@
+USER ubuntu
+USER anonymous
+PASS ubuntu
+REST asd
+USER ubuntu
+USER anonymous
+HELP

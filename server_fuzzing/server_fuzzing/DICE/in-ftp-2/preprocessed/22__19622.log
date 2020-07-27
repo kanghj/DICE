@@ -1,0 +1,6 @@
+USER ubuntu
+PASS ubuntu
+USER webadmin
+HELP
+USER webadmin
+STAT

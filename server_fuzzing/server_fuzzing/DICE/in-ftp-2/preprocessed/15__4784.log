@@ -1,0 +1,4 @@
+USER ubuntu
+PASS ubuntu
+LIST
+MKD +l

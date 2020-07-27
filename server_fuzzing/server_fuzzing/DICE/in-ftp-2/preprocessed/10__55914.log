@@ -1,0 +1,8 @@
+USER ubuntu
+USER anonymous
+PASS ubuntu
+USER ubuntu
+HELP
+PASS ubuntu
+REST (p{javaJavaIdentifierStart}(p{javaJavaIdentifierPart})*.)+p{javaJavaIdentifierStart}(p{javaJavaIdentifierPart})*
+LIST (p{javaJavaIdentifierStart}(p{javaJavaIdentifierPart})*.)+p{javaJavaIdentifierStart}(p{javaJavaIdentifierPart})*

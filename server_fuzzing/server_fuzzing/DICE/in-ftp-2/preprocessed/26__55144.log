@@ -1,0 +1,9 @@
+USER ubuntu
+USER anonymous
+PASS ubuntu
+USER webadmin
+HELP
+PASS ubuntu
+LIST
+USER webadmin
+QUIT

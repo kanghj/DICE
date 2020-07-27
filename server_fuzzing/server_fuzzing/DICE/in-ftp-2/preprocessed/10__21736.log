@@ -1,0 +1,5 @@
+HELP
+USER anonymous
+PASS ubuntu
+LIST
+APPE test

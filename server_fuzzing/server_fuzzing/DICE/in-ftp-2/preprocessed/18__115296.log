@@ -1,0 +1,6 @@
+USER ubuntu
+PASS ubuntu
+REST asd
+MLSD ubuntu
+QUIT
+SIZE test

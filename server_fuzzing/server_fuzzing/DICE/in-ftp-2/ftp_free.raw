@@ -1,0 +1,4 @@
+USER ubuntu
+PASS ubuntu
+MKD test
+QUIT

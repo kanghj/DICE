@@ -1,0 +1,5 @@
+USER anonymous
+PASS ubuntu
+NOOP
+LIST
+LIST

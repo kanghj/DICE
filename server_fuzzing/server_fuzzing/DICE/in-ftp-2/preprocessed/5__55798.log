@@ -1,0 +1,7 @@
+USER ubuntu
+USER anonymous
+PASS ubuntu
+USER ubuntu
+PASS ubuntu
+STOR test
+RNTO test1

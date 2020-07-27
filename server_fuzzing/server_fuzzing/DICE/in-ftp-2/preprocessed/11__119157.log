@@ -1,0 +1,9 @@
+USER ubuntu
+USER webadmin
+USER webadmin
+HELP
+USER webadmin
+PASS ubuntu
+HELP
+TYPE I
+MKD ~O
