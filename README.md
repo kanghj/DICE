@@ -1,7 +1,7 @@
 # DICE
 
 
-The traces produced by DICE-Tester can be found in the [traces directory](https://github.com/kanghj/DICE/tree/master/traces).
+One set of traces produced by DICE-Tester can be found in the [traces directory](https://github.com/kanghj/DICE/tree/master/traces).
 
 The models output are in the [outputs directory](https://github.com/kanghj/DICE/tree/master/outputs)
 
