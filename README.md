@@ -3,7 +3,7 @@
 This accompanies the paper, Adversarial Specification Mining.
 
 The objective of this work is to better mine automata models of APIs. 
-This is done through search-based test generation guided to falsify LTL properties that hold over the entire automata.
+This is done through search-based test generation guided to produce execution traces during testing that will falsify LTL properties that was thought to hold of the API.
 Through this effort to look for new traces that contradict properties previously thought to hold, we can improve the model.
 
 We also propose a new specification mining algorithm that can leverage the diverse traces. 
