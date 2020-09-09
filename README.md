@@ -15,9 +15,13 @@ Our approach can be viewed as an approach that is enhanced by and builds on
 4. many LTL properties that show an "immediate" relationship are useful [4], but prior work has shown that many of the properties are always false [5]. We improve on the formulation of these "immediate" relationships by accounting for method purity.
 
 [1] A. W. Biermann and J. Feldman. On the synthesis of finitestate machines from samples of their behavior. IEEE Transactions on Computers, 21:592–597, 1972.
+
 [2] G. de Caso, V. Braberman, D. Garbervetsky, and S. Uchitel. Automated abstractions for contract validation. IEEE Transactions on Software Engineering, 38(1), 2012.
+
 [3] Lo, David, Leonardo Mariani, and Mauro Pezzè. "Automatic steering of behavioral model inference." Proceedings of the 7th Joint Meeting Of The European Software Engineering Conference and the ACM SIGSOFT symposium on The foundations of software engineering. 2009.
+
 [4] Le, Tien-Duy B., et al. "Synergizing specification miners through model fissions and fusions (t)." 2015 30th IEEE/ACM International Conference on Automated Software Engineering (ASE). IEEE, 2015.
+
 [5] Sun, Peng, et al. "Mining Specifications from Documentation using a Crowd." 2019 IEEE 26th International Conference on Software Analysis, Evolution and Reengineering (SANER). IEEE, 2019.
 
 One set of traces produced by DICE-Tester can be found in the [traces directory](https://github.com/kanghj/DICE/tree/master/traces).
