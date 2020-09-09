@@ -4,7 +4,10 @@ This accompanies the paper, Adversarial Specification Mining.
 
 The objective of this work is to better mine automata models of APIs. 
 This is done through search-based test generation guided to produce execution traces during testing that will falsify LTL properties that was thought to hold of the API.
-Through this effort to look for new traces that contradict properties previously thought to hold, we can improve the model.
+In this work, we focus on LTL properties over 2 events, using property templates introduced in prior studies [4,5,6].
+Through this effort to look for new traces that contradict properties previously thought to hold, we can improve the model as the specification inference process benefits from the diverse traces.
+
+
 
 We also propose a new specification mining algorithm that can leverage the diverse traces. 
 More is described in the paper, but mainly, we use the insights developed by prior studies. 
@@ -14,7 +17,7 @@ Our approach can be viewed as an approach that is enhanced by and builds on
 3. LTL properties can be used to guide automata inference [3,4]
 4. many LTL properties that show an "immediate" relationship are useful [4], but prior work has shown that many of the properties are always false [5]. We improve on the formulation of these "immediate" relationships by accounting for method purity.
 
-[1] A. W. Biermann and J. Feldman. On the synthesis of finitestate machines from samples of their behavior. IEEE Transactions on Computers, 21:592–597, 1972.
+[1] A. W. Biermann and J. Feldman. On the synthesis of finite state machines from samples of their behavior. IEEE Transactions on Computers, 21:592–597, 1972.
 
 [2] G. de Caso, V. Braberman, D. Garbervetsky, and S. Uchitel. Automated abstractions for contract validation. IEEE Transactions on Software Engineering, 38(1), 2012.
 
@@ -23,6 +26,8 @@ Our approach can be viewed as an approach that is enhanced by and builds on
 [4] Le, Tien-Duy B., et al. "Synergizing specification miners through model fissions and fusions (t)." 2015 30th IEEE/ACM International Conference on Automated Software Engineering (ASE). IEEE, 2015.
 
 [5] Sun, Peng, et al. "Mining Specifications from Documentation using a Crowd." 2019 IEEE 26th International Conference on Software Analysis, Evolution and Reengineering (SANER). IEEE, 2019.
+
+[6] Ivan Beschastnikh, Yuriy Brun, Jenny Abrahamson, Michael D Ernst, and Arvind Krishnamurthy. 2014. Using declarative specification to improve the understanding, extensibility, and comparison of model-inference algorithms. IEEE Transactions on Software Engineering 41
 
 One set of traces produced by DICE-Tester can be found in the [traces directory](https://github.com/kanghj/DICE/tree/master/traces).
 
