@@ -1,0 +1,15 @@
+1
+S0
+1
+S2
+10
+S0	S1	ZipOutputStream_EXIT90	0.99
+S1	S3	putNextEntry_EXIT180	0.99
+S1	S1	closeEntry_EXIT245	0.99
+S3	S3	write_EXIT286	0.99
+S1	S1	write_EXIT286	0.99
+S3	S2	close_EXIT324	0.99
+S1	S2	close_EXIT324	0.99
+S3	S1	closeEntry_EXIT245	0.99
+S2	S2	close_EXIT324	0.99
+S3	S3	putNextEntry_EXIT180	0.99

@@ -1,0 +1,59 @@
+1
+S0
+3
+S2
+S1
+S5
+52
+S5	S5	isBound_EXIT1432:FALSE	0.99
+S2	S2	getRemoteSocketAddress_EXIT679	0.99
+S9	S2	setSoTimeout_EXIT998	0.99
+S1	S1	getInputStream_EXIT785	0.99
+S1	S1	setSendBufferSize_EXIT1051	0.99
+S1	S1	setReceiveBufferSize_EXIT1123	0.99
+S2	S1	connect_EXIT534	0.99
+S5	S5	isConnected_EXIT1420:FALSE	0.99
+S1	S1	getReceiveBufferSize_EXIT1145	0.99
+S9	S2	setKeepAlive_EXIT1161	0.99
+S2	S2	getReceiveBufferSize_EXIT1145	0.99
+S5	S5	getPort_EXIT641	0.99
+S2	S2	setTcpNoDelay_EXIT845	0.99
+S0	S1	Socket_EXIT371	0.99
+S2	S2	isBound_EXIT1432:FALSE	0.99
+S5	S5	isConnected_EXIT1420:TRUE	0.99
+S9	S9	getPort_EXIT641	0.99
+S5	S5	isClosed_EXIT1444:TRUE	0.99
+S2	S2	isClosed_EXIT1444:FALSE	0.99
+S2	S2	getSendBufferSize_EXIT1073	0.99
+S9	S2	setSendBufferSize_EXIT1051	0.99
+S1	S1	isConnected_EXIT1420:TRUE	0.99
+S1	S1	getOutputStream_EXIT825	0.99
+S2	S2	setReceiveBufferSize_EXIT1123	0.99
+S1	S1	getPort_EXIT641	0.99
+S2	S2	setKeepAlive_EXIT1161	0.99
+S9	S2	getSendBufferSize_EXIT1073	0.99
+S9	S9	isClosed_EXIT1444:FALSE	0.99
+S2	S2	setSoTimeout_EXIT998	0.99
+S0	S2	Socket_EXIT69	0.99
+S2	S2	getPort_EXIT641	0.99
+S5	S5	close_EXIT1335	0.99
+S1	S1	isClosed_EXIT1444:FALSE	0.99
+S1	S1	getSendBufferSize_EXIT1073	0.99
+S1	S1	setTcpNoDelay_EXIT845	0.99
+S1	S1	getRemoteSocketAddress_EXIT679	0.99
+S2	S2	setSendBufferSize_EXIT1051	0.99
+S9	S2	setReceiveBufferSize_EXIT1123	0.99
+S1	S1	setSoTimeout_EXIT998	0.99
+S1	S1	isBound_EXIT1432:TRUE	0.99
+S1	S5	close_EXIT1335	0.99
+S5	S5	isBound_EXIT1432:TRUE	0.99
+S9	S9	getRemoteSocketAddress_EXIT679	0.99
+S9	S2	setTcpNoDelay_EXIT845	0.99
+S0	S2	Socket_EXIT143	0.99
+S1	S1	setKeepAlive_EXIT1161	0.99
+S9	S2	getReceiveBufferSize_EXIT1145	0.99
+S2	S2	isConnected_EXIT1420:FALSE	0.99
+S5	S5	getRemoteSocketAddress_EXIT679	0.99
+S2	S5	close_EXIT1335	0.99
+S9	S1	connect_EXIT534	0.99
+S9	S5	close_EXIT1335	0.99

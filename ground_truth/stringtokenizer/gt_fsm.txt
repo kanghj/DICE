@@ -1,0 +1,12 @@
+1
+S0
+2
+S2
+S1
+6
+S1	S2	nextToken_EXIT336	0.99
+S0	S2	StringTokenizer_EXIT187	0.99
+S2	S2	hasMoreTokens_EXIT308:FALSE	0.99
+S0	S1	StringTokenizer_EXIT187	0.99
+S1	S1	nextToken_EXIT336	0.99
+S1	S1	hasMoreTokens_EXIT308:TRUE	0.99

@@ -1,0 +1,21 @@
+1
+0
+2
+1
+2
+15
+0	2	Hashtable
+1	2	put
+1	1	get
+2	2	remove
+1	1	remove
+2	2	isEmpty:FALSE
+1	1	isEmpty:TRUE
+2	1	remove
+2	2	put
+2	2	hashCode
+1	1	hashCode
+0	1	Hashtable
+2	2	get
+1	1	clone
+2	2	clone

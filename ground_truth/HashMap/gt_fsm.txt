@@ -1,0 +1,26 @@
+1
+0
+2
+1
+2
+20
+1	2	put
+2	2	put
+1	1	get
+2	2	containsKey:TRUE
+2	2	size
+2	2	values
+1	1	putAll
+1	1	values
+1	1	size
+0	1	HashMap
+2	2	entrySet
+1	2	putAll
+1	1	entrySet
+0	2	HashMap
+1	1	containsKey_EXIT364:FALSE
+2	2	containsKey:FALSE
+2	1	remove
+2	2	putAll
+2	2	remove
+2	2	get

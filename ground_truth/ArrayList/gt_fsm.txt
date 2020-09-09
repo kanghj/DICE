@@ -1,0 +1,38 @@
+1
+0
+2
+1
+2
+32
+1	2	add
+1	1	listIterator
+1	1	remove:FALSE
+2	2	get
+0	2	ArrayList
+2	2	addAll:FALSE
+2	2	size
+1	1	iterator
+2	2	isEmpty:FALSE
+1	1	toArray
+2	2	remove:TRUE
+2	2	indexOf
+2	2	add
+2	1	clear
+2	2	remove
+2	2	set
+1	1	isEmpty:TRUE
+1	1	size
+1	1	indexOf
+2	2	toArray
+2	1	remove
+2	1	remove:TRUE
+1	2	add:TRUE
+1	1	addAll:FALSE
+1	1	clear
+2	2	add:TRUE
+0	1	ArrayList
+2	2	iterator
+2	2	listIterator
+2	2	remove:FALSE
+2	2	addAll:TRUE
+1	2	addAll:TRUE

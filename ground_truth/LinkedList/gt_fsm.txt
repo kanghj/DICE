@@ -1,0 +1,26 @@
+1
+0
+2
+1
+2
+20
+2	2	remove:FALSE
+2	2	addLast
+2	2	size
+2	2	remove
+1	2	add
+0	1	LinkedList
+1	1	toArray
+1	1	listIterator
+1	1	remove:FALSE
+2	2	listIterator
+0	2	LinkedList
+2	2	toArray
+2	1	remove
+2	2	remove:TRUE
+1	2	addLast
+2	2	add
+1	2	add:TRUE
+1	1	size
+2	2	add:TRUE
+2	1	remove:TRUE
