@@ -6,6 +6,7 @@ The objective of this work is to better mine automata models of APIs.
 This is done through search-based test generation guided to produce execution traces during testing that will falsify LTL properties that was thought to hold of the API.
 In this work, we focus on LTL properties over 2 events, using property templates introduced in prior studies [4,5,6].
 Through this effort to look for new traces that contradict properties previously thought to hold, we can improve the model as the specification inference process benefits from the diverse traces.
+Afterwards, we show that this process is also useful for fuzzing of protocols. By learning automata models of a protocol's client, this allows us to explore deeper states in a server of the protocol.
 
 
 
