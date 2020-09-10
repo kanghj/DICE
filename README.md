@@ -2,17 +2,17 @@
 
 This accompanies the paper, Adversarial Specification Mining.
 
-The objective of this work is to better mine automata models of APIs. 
-This is done through search-based test generation guided to produce execution traces during testing that will falsify LTL properties that was thought to hold of the API.
+The objective of this work is to __better mine automata models of APIs__. 
+This is done through **search-based test generation guided to produce execution traces during testing that will falsify LTL properties** that was thought to hold of the API.
 In this work, we focus on LTL properties over 2 events, using property templates introduced in prior studies [4,5,6].
 Through this effort to look for new traces that contradict properties previously thought to hold, we can improve the model as the specification inference process benefits from the diverse traces.
-Afterwards, we show that this process is also useful for fuzzing of protocols. By learning automata models of a protocol's client, this allows us to explore deeper states in a server of the protocol.
+Afterwards, we show that this process is also useful for fuzzing of protocols. By **learning automata models of a protocol's client, this allows us to explore deeper states** in a server of the protocol.
 
 
 
-We also propose a new specification mining algorithm that can leverage the diverse traces. 
+We also propose **a new specification mining algorithm** that can leverage the diverse traces produced from the above process. 
 More is described in the paper, but mainly, we use the insights developed by prior studies. 
-Our approach can be viewed as an approach that is enhanced by and builds on 
+Our specification inference approach can be viewed as an approach that is enhanced by and builds on the following studes: 
 1. The k-tails algorithm [1]
 2. the CONTRACTOR[2] study shows the enabledness of methods lead to states (in a state model) that are of the right abstraction and intuitively interpreted by developers
 3. LTL properties can be used to guide automata inference [3,4]
