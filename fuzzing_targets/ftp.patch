@@ -1,0 +1,343 @@
+diff --git a/src/main/java/org/apache/commons/net/ftp/FTP.java b/src/main/java/org/apache/commons/net/ftp/FTP.java
+index bc62e153..1b806269 100644
+--- a/src/main/java/org/apache/commons/net/ftp/FTP.java
++++ b/src/main/java/org/apache/commons/net/ftp/FTP.java
+@@ -18,6 +18,7 @@
+ package org.apache.commons.net.ftp;
+ import java.io.BufferedReader;
+ import java.io.BufferedWriter;
++import java.io.Writer;
+ import java.io.IOException;
+ import java.io.InputStreamReader;
+ import java.io.OutputStreamWriter;
+@@ -258,7 +259,7 @@ public class FTP extends SocketClient
+      * with a null value, is initialized in {@link #_connectAction_},
+      * and set to null in {@link #disconnect}.
+      */
+-    protected BufferedWriter _controlOutput_;
++    protected Writer _controlOutput_;
+ 
+     /***
+      * The default FTP constructor.  Sets the default port to
+@@ -416,7 +417,7 @@ public class FTP extends SocketClient
+             _controlInput_ = new CRLFLineReader(socketIsReader);
+         }
+         _controlOutput_ =
+-            new BufferedWriter(new OutputStreamWriter(_output_, getControlEncoding()));
++            new HJLoggingWriter(new BufferedWriter(new OutputStreamWriter(_output_, getControlEncoding())));
+         if (connectTimeout > 0) { // NET-385
+             int original = _socket_.getSoTimeout();
+             _socket_.setSoTimeout(connectTimeout);
+diff --git a/src/main/java/org/apache/commons/net/ftp/HJFTPClient.java b/src/main/java/org/apache/commons/net/ftp/HJFTPClient.java
+new file mode 100644
+index 00000000..c643320c
+--- /dev/null
++++ b/src/main/java/org/apache/commons/net/ftp/HJFTPClient.java
+@@ -0,0 +1,255 @@
++package org.apache.commons.net.ftp;
++
++import java.io.IOException;
++import java.net.InetAddress;
++import java.net.SocketException;
++
++public class HJFTPClient implements AutoCloseable {
++
++	public static final String name1 = "webadmin";
++	public static final String name2 = "ubuntu";
++	public static final String name3 = "anonymous";
++	public static final String pass1 = "asd";
++
++	FTPClient ftpClient = new FTPClient();
++
++	
++	public HJFTPClient() throws SocketException, IOException {
++		connect();
++	}
++	
++	private void connect() throws SocketException, IOException {
++
++		byte[] ipAddr = new byte[] { 127, 0, 0, 1 };
++
++		ftpClient.connect(InetAddress.getByAddress(ipAddr), 2200);
++	}
++
++
++	public int pass(String password) throws IOException {
++		int ret = ftpClient.pass("ubuntu");
++
++		if (ret >= 400) {
++			throw new RuntimeException("pass: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++
++	public int user(String name) throws IOException {
++		if (name.isEmpty()) {
++			int ret = ftpClient.user("anonymous");
++			if (ret >= 400) {
++				throw new RuntimeException("user: server responded with code " + ret);
++			}
++			return ret;
++		} else {
++			int ret = name.length() > 2 ? ftpClient.user("ubuntu") : ftpClient.user("webadmin");
++			if (ret >= 400) {
++				throw new RuntimeException("user: server responded with code " + ret);
++			}
++
++			return ret;
++		}
++	}
++
++	public int list() throws IOException {
++		int ret = ftpClient.list();
++		if (ret >= 400) {
++			throw new RuntimeException("list: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++
++	public int list(String pathname) throws IOException {
++		int ret = ftpClient.list(pathname);
++		if (ret >= 400) {
++			throw new RuntimeException("list: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++
++	public int mkd(String pathname) throws IOException {
++		int ret = ftpClient.mkd(pathname);
++		if (ret >= 400) {
++			throw new RuntimeException("mkd: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++
++	public int mkd() throws IOException {
++		int ret = ftpClient.mkd("testD");
++		if (ret >= 400) {
++			throw new RuntimeException("mkd: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++
++	public int noop() throws IOException {
++		int ret = ftpClient.noop();
++		if (ret >= 400) {
++			throw new RuntimeException("noop: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++
++	public void disconnect() throws IOException {
++		ftpClient.disconnect();
++	}
++
++	public int help() throws IOException {
++		int ret = ftpClient.help();
++		if (ret >= 400) {
++			throw new RuntimeException("help: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++
++
++	public int stat() throws IOException {
++		int ret = ftpClient.stat();
++		if (ret >= 400) {
++			throw new RuntimeException("stat: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++	
++	public int rest(String marker) throws IOException {
++		int ret = ftpClient.rest(marker);
++		if (ret >= 400) {
++			throw new RuntimeException("rest: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++	
++	public int mlsd(String pathname) throws IOException {
++		int ret = ftpClient.mlsd(pathname);
++		if (ret >= 400) {
++			throw new RuntimeException("mlsd: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++	
++	public int type(int type)  throws IOException {
++		int ret = ftpClient.type(type);
++		if (ret >= 400) {
++			throw new RuntimeException("type: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++	
++	public int rmd() throws IOException {
++		int ret = ftpClient.rmd("testD");
++		if (ret >= 400) {
++			throw new RuntimeException("rmd: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++	
++	public int rnto() throws IOException {
++		int ret = ftpClient.rnto("test1");
++		if (ret >= 400) {
++			throw new RuntimeException("rnto: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++	
++	public int rnfr() throws IOException {
++		int ret = ftpClient.rnfr("test");
++		if (ret >= 400) {
++			throw new RuntimeException("rnfr: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++	
++	public int stor() throws IOException {
++		int ret = ftpClient.stor("test");
++		if (ret >= 400) {
++			throw new RuntimeException("stor: server responded with code " + ret);
++		}
++
++		return ret;
++	}
++	
++	public void quit() throws IOException {
++		int ret = ftpClient.quit();
++		if (ret >= 400) {
++			throw new RuntimeException("quit: server responded with code " + ret);
++		}
++
++	}
++	
++	public void size() throws IOException {
++		int ret = ftpClient.size("test");
++		if (ret >= 400) {
++			throw new RuntimeException("size: server responded with code " + ret);
++		}
++	}
++	
++	public void cwd() throws IOException {
++		int ret = ftpClient.cwd("testD");
++		if (ret >= 400) {
++			throw new RuntimeException("cwd: server responded with code " + ret);
++		}
++	}
++	
++	public void cdup() throws  IOException {
++		int ret = ftpClient.cdup();
++		if (ret >= 400) {
++			throw new RuntimeException("cdup: server responded with code " + ret);
++		}
++	}
++	
++	public void appe()  throws  IOException {
++		int ret = ftpClient.appe("test");
++		if (ret >= 400) {
++			throw new RuntimeException("appe: server responded with code " + ret);
++		}
++	}
++	
++	public void retr()  throws  IOException {
++		int ret = ftpClient.retr("test");
++		if (ret >= 400) {
++			throw new RuntimeException("appe: server responded with code " + ret);
++		}
++	}
++	
++	
++	@Override
++	public void close() {
++		try {
++			this.quit();
++			this.disconnect();
++			
++		} catch (IOException e) {
++			e.printStackTrace();
++		}
++	}
++	
++	
++	public static void main(String... args) throws IOException {
++		HJFTPClient hJFTPClient0 = new HJFTPClient();
++		hJFTPClient0.list();
++		String string0 = "";
++		int int0 = hJFTPClient0.help();
++		hJFTPClient0.disconnect();
++		hJFTPClient0.noop();
++		String string1 = "";
++		hJFTPClient0.list(string1);
++		hJFTPClient0.pass(string1);
++
++	}
++}
+diff --git a/src/main/java/org/apache/commons/net/ftp/HJLoggingWriter.java b/src/main/java/org/apache/commons/net/ftp/HJLoggingWriter.java
+new file mode 100644
+index 00000000..8e91eed7
+--- /dev/null
++++ b/src/main/java/org/apache/commons/net/ftp/HJLoggingWriter.java
+@@ -0,0 +1,46 @@
++package org.apache.commons.net.ftp;
++
++import java.io.BufferedWriter;
++import java.io.FileWriter;
++import java.io.IOException;
++import java.io.Writer;
++
++public class HJLoggingWriter extends Writer {
++
++	Writer writer;
++	Writer logWriter;
++	
++	public HJLoggingWriter(Writer writer) {
++		this.writer = writer;
++		
++		try {
++			logWriter = new BufferedWriter(new FileWriter("hj_logs.log", true));
++		} catch (IOException e) {
++			e.printStackTrace();
++			throw new RuntimeException(e);
++		}
++	}
++	
++	@Override
++	public void write(char[] cbuf, int off, int len) throws IOException {
++		writer.write(cbuf, off, len);
++		logWriter.write(cbuf, off, len);
++		
++	}
++
++	@Override
++	public void flush() throws IOException {
++		writer.flush();
++		logWriter.flush();
++		
++	}
++
++	@Override
++	public void close() throws IOException {
++		writer.close();
++		logWriter.close();
++	}
++	
++
++}
++
