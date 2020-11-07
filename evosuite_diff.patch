@@ -1,0 +1,1826 @@
+diff --git a/client/src/main/java/org/evosuite/coverage/fsatransition/FsaUtils.java b/client/src/main/java/org/evosuite/coverage/fsatransition/FsaUtils.java
+new file mode 100644
+index 000000000..16f323a24
+--- /dev/null
++++ b/client/src/main/java/org/evosuite/coverage/fsatransition/FsaUtils.java
+@@ -0,0 +1,1137 @@
++package org.evosuite.coverage.fsatransition;
++
++import java.io.BufferedOutputStream;
++import java.io.BufferedReader;
++import java.io.BufferedWriter;
++import java.io.ByteArrayOutputStream;
++import java.io.File;
++import java.io.FileNotFoundException;
++import java.io.FileOutputStream;
++import java.io.FileReader;
++import java.io.FileWriter;
++import java.io.IOException;
++import java.io.InputStreamReader;
++import java.lang.management.ManagementFactory;
++import java.nio.ByteBuffer;
++import java.security.Certificate;
++import java.security.InvalidKeyException;
++import java.security.KeyPair;
++import java.security.KeyPairGenerator;
++import java.security.NoSuchAlgorithmException;
++import java.security.NoSuchProviderException;
++import java.security.Provider;
++import java.security.Signature;
++import java.security.SignatureException;
++import java.security.spec.DSAGenParameterSpec;
++import java.util.ArrayList;
++import java.util.Arrays;
++import java.util.Collection;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.Hashtable;
++import java.util.Iterator;
++import java.util.List;
++import java.util.Map;
++import java.util.Set;
++import java.util.stream.Collectors;
++import java.util.stream.Stream;
++import java.util.zip.ZipEntry;
++import java.util.zip.ZipOutputStream;
++import java.util.Map.Entry;
++import java.util.Random;
++
++import org.apache.commons.lang3.ClassUtils;
++import org.apache.commons.lang3.tuple.Triple;
++import org.evosuite.Properties;
++import org.evosuite.assertion.ArgumentValueTraceEntry;
++import org.evosuite.assertion.NullTraceEntry;
++import org.evosuite.assertion.OutputTrace;
++import org.evosuite.assertion.OutputTraceEntry;
++import org.evosuite.assertion.PrimitiveTraceEntry;
++import org.evosuite.coverage.FitnessFunctions;
++import org.evosuite.coverage.ltl.LtlCoverageFactory;
++import org.evosuite.ga.metaheuristics.mosa.structural.MultiCriteriaManager;
++import org.evosuite.runtime.ViolatedAssumptionAnswer;
++import org.evosuite.seeding.ConstantPoolManager;
++import org.evosuite.testcase.TestCase;
++import org.evosuite.testcase.execution.ExecutionResult;
++import org.evosuite.testcase.statements.ConstructorStatement;
++import org.evosuite.testcase.statements.MethodStatement;
++import org.evosuite.testcase.statements.Statement;
++import org.evosuite.testcase.variable.VariableReference;
++import org.evosuite.utils.LoggingUtils;
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
++
++public class FsaUtils {
++
++	
++	private static boolean isFirstRun = true;
++	
++	
++	public final static boolean onlyName = true;
++	public final static boolean writeParameterValues = false;
++	
++	private static boolean printedExample = false;
++	private static Logger logger = LoggerFactory.getLogger(FsaUtils.class);
++	
++	
++	static final Set<String> vocab = new java.util.HashSet<>();
++	static boolean checkedVocab = false;
++	
++	public static int hasNotLeak = 0;
++	
++	private static final Set<String> methodsThatCanThrow = new HashSet<>();
++	
++	
++	// cache
++	private static final Map<Class<?>, Set<String>> methodsOfClazz = new HashMap<>();
++	private static final Map<Class<?>, BufferedWriter> classTracesWriter = new HashMap<>();
++	
++	public static boolean isVocabInitialized() {
++		return !vocab.isEmpty() && checkedVocab;
++	}
++
++	
++	public static void initVocab() {
++		
++//		logger.warn("init vocab of " + Properties.TARGET_CLASS.toLowerCase());
++		checkedVocab = true;
++		String name = Properties.TARGET_CLASS;
++		
++		name = name.substring(name.lastIndexOf(".") + 1);
++		String filePath = name.toLowerCase() + ".vocab.txt";
++		try (BufferedReader br = new BufferedReader(
++				new FileReader(
++						filePath))
++			) {
++				String st; 
++				while ((st = br.readLine()) != null)  {
++					  vocab.add(st.trim());
++				} 
++				
++			} catch (FileNotFoundException e) {
++				e.printStackTrace();
++				throw new RuntimeException(e);
++			} catch (IOException e) {
++				e.printStackTrace();
++				throw new RuntimeException(e);
++			}
++		LoggingUtils.logWarnAtMostOnce(
++			logger, 
++			"vocab initialized! " + " size="+ vocab.size() + ". Init from " 
++			+ filePath);
++		
++	}
++	
++	public static boolean isInVocab(String methodName) {
++		if (!isVocabInitialized() ) {
++			LoggingUtils.logWarnAtMostOnce(logger, "No vocab, so return true to everything "+ methodName );
++			return true;
++		}
++		methodName = methodName.split("\\(")[0];
++		LoggingUtils.logWarnAtMostOnce(logger, "Checking if method is in vocab: " + methodName + ". Result= " + vocab.contains(methodName));
++
++		return vocab.contains(methodName);
++	}
++	
++	public static boolean isInit(ExecutionResult result, Statement stmt, boolean isExceptionThrownByStmt, TestCase test) {
++		if (stmt instanceof MethodStatement) {
++			MethodStatement ms = (MethodStatement) stmt;
++			
++			return ms.isStatic(); // TODO this is just a guess that if a method is static, it might be for initialization..
++			
++		}
++		
++		if (stmt instanceof ConstructorStatement) {
++			
++			return true;
++		}
++		
++		return false;
++	}
++
++	
++	private static boolean trackBooleanReturnValuesOnly = true;
++
++
++	public static boolean checkLeak = true;
++	
++	@SuppressWarnings("unused")
++	public static String methodName(ExecutionResult result, Statement stmt, boolean isExceptionThrownByStmt, 
++			String exceptionThrown, 
++			TestCase test, boolean keepParenthesis) {
++		
++			String methodName = null;
++		
++		if (stmt instanceof MethodStatement) {
++			MethodStatement ms = (MethodStatement) stmt;
++			methodName = ms.getMethodName() + ms.getDescriptor();
++			
++			List<VariableReference> parameters = ms.getParameterReferences();
++			
++//			if (ms.getMethodName().contains("iterator")) {
++//				logger.warn("!!!. THERE IS AN iterator invocation in methodName!");
++//			}
++		
++			if (!keepParenthesis) {
++				methodName = methodName.split("\\(")[0];
++			}
++//			for (VariableReference param : parameters) {
++//				
++//			}
++//			
++			
++			if (!trackBooleanReturnValuesOnly || 
++					(ms.getReturnType().getTypeName().toLowerCase().equals("boolean") 
++					|| ms.getReturnType().getTypeName().toLowerCase().contains("bool"))) {
++				
++				
++				OutputTrace<?> primitiveTraces = result.getTrace(PrimitiveTraceEntry.class);
++				OutputTrace<?> nullTraces = result.getTrace(NullTraceEntry.class);
++//				OutputTrace<?> argValTraces = result.getTrace(ArgumentValueTraceEntry.class);
++				
++//				OutputTraceEntry argValEntry = argValTraces.getEntry(stmt.getPosition(), ms.getReturnValue());
++				
++				
++				
++				if (!ms.getReturnType().getTypeName().equals("void")) {
++					// for now, adding arguments values only work if not returning void (because of some internal evosuite things)
++					if (methodName.contains("range") &&  ms.getNumParameters() == 0) {
++						logger.warn("range has 0 params");
++						try {
++							throw new RuntimeException("range has 0 params");
++						} catch (Exception e) {
++							logger.error("range has 0 params", e);
++						}
++					}
++					if (writeParameterValues && keepParenthesis && !isExceptionThrownByStmt && ms.getNumParameters() > 0) {
++						
++						OutputTrace<?> argValTraces = result.getTrace(ArgumentValueTraceEntry.class);
++						
++						OutputTraceEntry argValEntry = argValTraces.getEntry(stmt.getPosition(), ms.getReturnValue());
++//						
++						if (argValEntry != null) {
++							ArgumentValueTraceEntry argEntry = (ArgumentValueTraceEntry) argValEntry;
++							List<VariableReference> arguments = argEntry.getVar();
++							List<String> abstractedArguments = new ArrayList<>();
++							assert arguments.size() == argEntry.getValues().size();
++							
++							for (int i = 0; i < arguments.size(); i++) {
++								VariableReference arg = arguments.get(i);
++								Object value = argEntry.getValues().get(i);
++								abstractedArguments.add(
++										abstractArgumentValue(value, arg.getType().getTypeName().toLowerCase()));
++							}
++							
++							
++							methodName += "{" + String.join("", abstractedArguments) + "}";
++						} else {
++							logger.warn("empty argument values at " + stmt.getPosition() + ", " + ms.getReturnValue());
++							logger.warn("empty arguments");
++							try {
++								throw new RuntimeException("empty arguments");
++							} catch (Exception e) {
++								logger.error("empty arguments", e);
++							}
++							
++							return null; // indicates that this trace should be disregarded
++						}
++					}
++					
++					if (primitiveTraces == null && nullTraces == null) {
++//						logger.warn("empty observer");
++						try {
++							throw new RuntimeException("empty observer");
++						} catch (Exception e) {
++							logger.error("empty observer", e);
++						}
++					} else {
++						;
++						OutputTraceEntry primitiveEntry = primitiveTraces.getEntry(stmt.getPosition(), ms.getReturnValue());
++						OutputTraceEntry nullEntry = nullTraces.getEntry(stmt.getPosition(), ms.getReturnValue());
++						
++						if (primitiveEntry != null) {
++							PrimitiveTraceEntry valueEntry = (PrimitiveTraceEntry) primitiveEntry;
++							
++							try {
++								String abstractedReturnValue = abstractReturnValue(
++										valueEntry, ms.getReturnType().getTypeName().toLowerCase());
++								methodName += ":" + abstractedReturnValue; //valueEntry.value.toString().toUpperCase();
++							
++							} catch (Exception e) {
++								logger.error("error abstracting return value at " + stmt, e);
++							}
++	
++							
++						} else if (nullEntry != null) {
++							
++							NullTraceEntry nullValueEntry = (NullTraceEntry) nullEntry;
++							
++							try {
++								String abstractedReturnValue = abstractReturnValue(
++										nullValueEntry, ms.getReturnType().getTypeName().toLowerCase());
++								methodName += ":" + abstractedReturnValue; //valueEntry.value.toString().toUpperCase();
++							} catch (Exception e) {
++								logger.error("error abstracting return value at " + stmt, e);
++							}
++							
++						} else if (!isExceptionThrownByStmt) {
++	
++							if (!printedExample) {
++		    					logger.warn("no return value at non-exceptional stmt");
++		    					logger.warn("stmt " + stmt + "@" + stmt.getPosition());
++		    					
++		    					logger.warn(test.toCode());
++		    					printedExample = true;
++		    					try {
++		    						throw new RuntimeException("no return value at non-exceptional stmt");
++		    					} catch (Exception e) {
++		    						logger.error("no return value at non-exceptional stmt", e);
++		    						e.printStackTrace();
++		    					}
++	    					}
++							
++							logger.warn("return null due to missing return value!  : " +  ms.getReturnType().getTypeName());
++							return null; // indicates that this trace should be disregarded
++						}
++					}
++				}
++			}
++		}
++		
++		if (stmt instanceof ConstructorStatement) {
++			ConstructorStatement ps = (ConstructorStatement) stmt;
++//			methodName = ps.getMethodName() + ps.getDescriptor();
++			methodName = "<init>" + ps.getDescriptor();
++			
++			if (onlyName) {
++				methodName = methodName.split("\\(")[0];
++			}
++			
++		}
++		
++		if (isExceptionThrownByStmt) {
++			methodName = "EXCEPTION:" + exceptionThrown.toUpperCase() + "(" + methodName + ")";  //"EXCEPTION(" + methodName + ")";
++		}
++
++		return methodName;
++	}
++	
++	public static String methodName(ExecutionResult result, Statement stmt, boolean isExceptionThrownByStmt, 
++			String exceptionThrown, 
++			TestCase test) {
++		return methodName(result, stmt, isExceptionThrownByStmt, exceptionThrown, test, !onlyName);
++	}
++	
++	public static String abstractReturnValue(PrimitiveTraceEntry traceEntry, String lowerCasedType) {
++		if (lowerCasedType.equals("bool") || lowerCasedType.equals("boolean")) {
++			// either "true" or "false"
++			return traceEntry.value.toString().toUpperCase();
++		}
++		
++		if (lowerCasedType.startsWith("int")) {
++			if ((int) traceEntry.value > 0) {
++				return "1";
++			} else if ((int)traceEntry.value == 0) {
++				return "0";
++			} else {
++				return "-1";
++			}
++		}
++		
++		if (lowerCasedType.startsWith("long")) {
++			if ((long) traceEntry.value > 0) {
++				return "1";
++			} else if ((long)traceEntry.value == 0) {
++				return "0";
++			} else {
++				return "-1";
++			}
++		}
++		
++		return "";
++		
++		
++	}
++	
++	
++	public static String abstractArgumentValue(Object obj, String lowerCasedType) {
++		if (lowerCasedType.equals("bool") || lowerCasedType.equals("boolean")) {
++			// either "true" or "false"
++			return obj.toString().toUpperCase();
++		}
++		
++		if (lowerCasedType.startsWith("int")) {
++			if ((int) obj> 0) {
++				return "1";
++			} else if ((int)obj == 0) {
++				return "0";
++			} else {
++				return "-1";
++			}
++		}
++		
++		if (lowerCasedType.startsWith("long")) {
++			if ((long) obj > 0) {
++				return "1";
++			} else if ((long)obj == 0) {
++				return "0";
++			} else {
++				return "-1";
++			}
++		}
++		
++		if (lowerCasedType.startsWith("int")) {
++			logger.warn("int argument type, but reaching object type logic : " + obj);
++		}
++			
++		
++		return obj == null? "null" : "non-null";
++		
++	}
++	
++	public static String abstractReturnValue(NullTraceEntry traceEntry, String lowerCasedType) {
++		if (traceEntry.isNull) {
++			return "null";
++		} else {
++			return "non-null";
++		}
++		
++	}
++	
++	
++	
++	public static VariableReference tracedObject(Map<String, Set<Class<?>>> classOfVar, Statement stmt) {
++		VariableReference objectToTrace = null;
++		if (stmt instanceof MethodStatement) {
++			MethodStatement ps = (MethodStatement) stmt;
++			objectToTrace = ps.getCallee();
++			Class<?> clazz = ps.getMethod().getDeclaringClass();
++			
++
++			
++			if (objectToTrace == null) {
++				return null;
++			}
++			String objectName = objectToTrace.getName();
++			
++			if (!classOfVar.containsKey(objectName)) {
++				classOfVar.put(objectToTrace.getName(), new HashSet<>());
++			}
++			addToClassOfVar(classOfVar, objectName, clazz);
++			
++			// superclasses slow down the trace writing process too much. Let's only turn it on if needed.
++			// If I need a superclass, i should implement some configuration thing instead that only writes for the class that I need.
++//			Class<?> superclazz = clazz.getSuperclass();
++//			if (superclazz != null) {
++//				classOfVar.get(objectToTrace.getName()).add(superclazz);
++//			}
++			
++			Class<?>[] interfaces = clazz.getInterfaces();
++			addInterfacesAndParentsToClassOfVar(classOfVar, objectName, interfaces, clazz.getSuperclass());
++			
++//			LoggingUtils.logWarnAtMostOnce(logger, "superClass=" + clazz.getSuperclass() +" of=" + clazz);
++
++			
++			
++		}
++		if (stmt instanceof ConstructorStatement) {
++			ConstructorStatement ps = (ConstructorStatement) stmt;
++			VariableReference thisObject = ps.getReturnValue();
++			objectToTrace = thisObject;
++			Class<?> clazz = ps.getConstructor().getDeclaringClass();
++			if (objectToTrace == null) {
++//				logger.warn("object to trace is null in stmt " + stmt);
++				return null;
++			}
++			
++			String objectName = objectToTrace.getName();
++			
++			if (!classOfVar.containsKey(objectName)) {
++				classOfVar.put(objectName, new HashSet<>());
++			}
++			
++			addToClassOfVar(classOfVar, objectName, clazz);
++//			Class<?> superclazz = clazz.getSuperclass();
++//			classOfVar.get(objectToTrace.getName()).add(superclazz);
++			
++			Class<?>[] interfaces = clazz.getInterfaces();
++			addInterfacesAndParentsToClassOfVar(classOfVar, objectName, interfaces, clazz.getSuperclass());
++			
++			LoggingUtils.logWarnAtMostOnce(logger, "superClass=" + clazz.getSuperclass() +" of=" + clazz);
++		}
++		return objectToTrace;
++	}
++
++
++	private static void addInterfacesAndParentsToClassOfVar(Map<String, Set<Class<?>>> classOfVar, String objectName,
++			Class<?>[] interfaces, Class<?> superClass) {
++		
++		
++		Set<Class<?>> interfacesToAdd = new HashSet<>();
++
++		if (superClass != null) {
++			classOfVar.get(objectName).add(superClass);
++			Class<?>[] superClazzInterfaces = superClass.getInterfaces();
++			interfacesToAdd.addAll(Arrays.asList(superClazzInterfaces));
++			
++			if (superClass.getSuperclass() != null) {
++				interfacesToAdd.addAll(Arrays.asList(superClass.getSuperclass().getInterfaces()));
++			}
++		}
++		
++		
++		interfacesToAdd.addAll(Arrays.asList(interfaces));
++		
++		for (Class<?> interfaceObject : interfacesToAdd) {
++			addToClassOfVar(classOfVar, objectName, interfaceObject);
++			
++			for (Class<?> superInterface : interfaceObject.getInterfaces()) {
++				addToClassOfVar(classOfVar, objectName, superInterface);	
++				LoggingUtils.logWarnAtMostOnce(logger, "super interface=" + superInterface +" of=" + interfaceObject.getSuperclass());
++			}
++			
++			if (interfaceObject.getSuperclass() == null) {
++				continue;
++			}
++			
++			LoggingUtils.logWarnAtMostOnce(logger, "superClass=" + interfaceObject.getSuperclass() +" of=" + interfaceObject);
++
++			addToClassOfVar(classOfVar, objectName, interfaceObject.getSuperclass());
++			for ( Class<?> superInterfaceObject : interfaceObject.getSuperclass().getInterfaces()) {
++				addToClassOfVar(classOfVar, objectName, superInterfaceObject);	
++				LoggingUtils.logWarnAtMostOnce(logger, "interface=" + superInterfaceObject +" of=" + interfaceObject.getSuperclass());
++				
++				for (Class<?> superSuperInterfaceObject : superInterfaceObject.getInterfaces()) {
++					addToClassOfVar(classOfVar, objectName, superSuperInterfaceObject);	
++					LoggingUtils.logWarnAtMostOnce(logger, "super interface=" + superSuperInterfaceObject +" of=" + interfaceObject.getSuperclass());
++				}
++			}
++			
++			
++			if (interfaceObject.getSuperclass().getSuperclass() == null) {
++				continue;
++			}
++			
++			LoggingUtils.logWarnAtMostOnce(logger, "superClass=" + interfaceObject.getSuperclass().getSuperclass() +" of=" + interfaceObject.getSuperclass());
++
++			addToClassOfVar(classOfVar, objectName, interfaceObject.getSuperclass().getSuperclass());
++			for ( Class<?> superInterfaceObject : interfaceObject.getSuperclass().getSuperclass().getInterfaces()) {
++				addToClassOfVar(classOfVar, objectName, superInterfaceObject);	
++				LoggingUtils.logWarnAtMostOnce(logger, "interface=" + superInterfaceObject +" of=" + interfaceObject.getSuperclass().getSuperclass());
++				
++				for (Class<?> superSuperInterfaceObject : superInterfaceObject.getInterfaces()) {
++					addToClassOfVar(classOfVar, objectName, superSuperInterfaceObject);	
++					LoggingUtils.logWarnAtMostOnce(logger, "super interface=" + superSuperInterfaceObject +" of=" + interfaceObject.getSuperclass());
++				}
++			}
++		
++		
++		}
++	}
++	
++	private static void addToClassOfVar(Map<String, Set<Class<?>>> classOfVar, String variableName, Class<?> clazz) {
++		if (!clazz.getCanonicalName().contains("evosuite") && !clazz.getCanonicalName().contains("Cloneable")  && !clazz.getCanonicalName().contains("Serializable")) {
++			classOfVar.get(variableName).add(clazz);
++		}
++		
++	}
++	
++	public static Set<VariableReference> objectsToTrace(Map<String, Class<?>> classOfVar, Statement stmt) {
++		
++		return null;
++	}
++	
++	
++	public static void writeTracesToFile(List<String> methodEventNames, Class<?> clazz, String dirName) throws IOException {
++		if (!classTracesWriter.containsKey(clazz)) {
++			String clazzFileName = clazz.getName();
++			classTracesWriter.put(clazz, new BufferedWriter(new FileWriter(dirName +  Properties.CONFIGURATION_ID +  "_" + clazzFileName + ".traces", true)));
++		}
++		
++		BufferedWriter bufferedWriter = classTracesWriter.get(clazz);
++		LoggingUtils.logWarnAtMostOnce(logger, "write to " +dirName + clazz.getName() + ".traces");
++//		logger.warn("write to " +dirName + clazz.getName() + ".traces");
++		bufferedWriter.write("<START> ");
++		bufferedWriter.write(String.join(" ", methodEventNames));
++		bufferedWriter.write(" <END>\n");
++		bufferedWriter.flush();
++	}
++	
++	public static void writeTracesToFile(List<TestCase> tests, List<ExecutionResult> results, 
++										List<Boolean> hasLeaks, String dirName) throws IOException {
++		assert tests.size() == results.size();
++		assert tests.size() == hasLeaks.size();
++//		logger.warn("writing traces, length of both tests and results are " + tests.size());
++	
++		Set<String> knownCtor = new HashSet<>();
++		
++		for (int i = 0; i < results.size(); i++) {
++			ExecutionResult result = results.get(i);
++			TestCase test = tests.get(i);
++			boolean hasLeak = hasLeaks.get(i);
++			if (result == null || test == null) {
++				logger.warn("result or test is null");
++				continue;
++			}
++            Set<Integer> exceptionPositions = result.getPositionsWhereExceptionsWereThrown();
++            
++            Map<String, List<String>> tracesOfVar = new HashMap<>();	            
++            
++			Map<String, Set<Class<?>>> classOfVar = new HashMap<>();
++
++			
++			boolean hasUpdate = false;
++			
++    		for (Statement stmt : test) {
++    			boolean isExceptionThrownByStmt = exceptionPositions.contains(stmt.getPosition());
++				VariableReference objectToTrace = FsaUtils.tracedObject(classOfVar, stmt);
++				
++//				if (isExceptionThrownByStmt) {
++//					// let's break here because executing the code further down may throw an exception, but 
++//					// evosuite never tried to execute them. And we shouldn't assume the code below it is correct.
++//					
++//					break;
++//				}
++				
++				if (objectToTrace == null) {
++					if (isExceptionThrownByStmt) {
++//						logger.warn("stmt threw ex!");
++						// let's break here because executing the code further down may throw an exception, but 
++						// evosuite never tried to execute them. And we shouldn't assume the code below is correct.
++						// In this case, we don't know the object
++						break;
++						// HJ: I don't know! maybe exceptions are caught so its ok to continue cchecking below?
++//						continue;
++	    			} else {
++	    				continue;
++	    			}
++				}
++		
++				boolean onlyTrackingTargetClass = true;
++				if (onlyTrackingTargetClass) {
++					if (!stmt.getReturnClass().isAssignableFrom(Properties.getTargetClassAndDontInitialise())) {
++	    			
++						if (!classOfVar.get(objectToTrace.getName()).stream()
++								.anyMatch(clazz -> clazz.isAssignableFrom(Properties.getTargetClassAndDontInitialise()))) {
++							
++//								logger.warn("different class " + Properties.TARGET_CLASS + " vs " + classOfVar.get(objectToTrace.getName()));
++		    				continue;
++						}
++					} 
++				}
++    			
++
++    			String methodName = FsaUtils.methodName(result, stmt, isExceptionThrownByStmt, 
++    					result.getExceptionThrownAtPosition(stmt.getPosition()) != null ? 
++    							result.getExceptionThrownAtPosition(stmt.getPosition()).getClass().getSimpleName() : 
++    								null, 
++    					test);
++//    			logger.warn("method name looks like >" + methodName + "<");
++    			
++    			boolean isInit = FsaUtils.isInit(result, stmt, isExceptionThrownByStmt, test);
++    			
++    			if (methodName == null || methodName.endsWith("Z")) {
++//    				logger.warn("method name is null. ");
++    				break;
++    			}
++    			
++    			if (!tracesOfVar.containsKey(objectToTrace.getName())) {
++    				// first event for this object
++    				if (!methodName.contains("init>") && !isInit) {
++//	    					if (!printedExample) {
++//		    					logger.warn("Starting stmt is not ctor but is " + methodName + " stmt=" + stmt);
++//		    					logger.warn("var is " + objectToTrace.getName());
++//		    					
++//		    					logger.warn(test.toCode());
++//		    					printedExample = true;
++//	    					}
++    					if (isExceptionThrownByStmt) {
++    						methodsThatCanThrow.add(methodName);
++		    				break;
++		    			} 
++
++    				}
++    				
++    				tracesOfVar.put(objectToTrace.getName(), new ArrayList<>());
++    			}
++    			
++    			if (!isVocabInitialized()) {
++    				initVocab();
++    			}
++    			if (isExceptionThrownByStmt) {
++    				methodsThatCanThrow.add(methodName);
++//					logger.warn("reached exception at stmt of " + stmt);
++    				break;
++    			}
++    			if (!vocab.isEmpty() && !vocab.contains(methodName) && !isInit) {
++    				continue;
++//    				break; // need to break instead of continue because "CTOR <omitted> methodThatCannotGoFirst <omitted>" may be output otherwise 
++    			}
++    			
++    			
++			
++				
++				boolean isCtor = false;
++				boolean needToChangeInitToClassName = false; // have to change for evaluation against DSM
++    			if (needToChangeInitToClassName && methodName.contains("init")) {
++    				String className = objectToTrace.getClassName();
++    						
++    				if (className.contains("List")) {
++    					logger.warn("We have a list! methodName:" + methodName);
++    				}
++    				
++    				// convert <init> constructor to the class name
++//    				String[] nameWithoutFQ = Properties.TARGET_CLASS.split("\\.");
++//    				String ctorName = nameWithoutFQ[nameWithoutFQ.length - 1];
++//    				tracesOfVar.get(objectToTrace.getName()).append(nameWithoutFQ[nameWithoutFQ.length - 1] + " ");
++    				methodName = className;
++    				isCtor = true;
++    			}
++    			
++//    			
++    			tracesOfVar.get(objectToTrace.getName())
++	    			.add(methodName);
++    			
++    			if (isCtor) {
++    				knownCtor.add(methodName);
++    			}
++    			
++    			if (methodName.contains("update")) {
++    				logger.warn("has update" );
++    				hasUpdate = true;
++    			} else if (hasUpdate && methodName.contains("initVerify")) {
++    				logger.warn("update then initVerify : " + test);
++    			}
++    			
++    		}
++    		
++    		
++    		if (hasLeak) {
++    			for (Entry<String, List<String>> entry : tracesOfVar.entrySet()) {
++    				entry.getValue().add( "<IO-LEAK>");
++    			}
++    		}
++    		
++    		Map<Class<?>, Set<String>> classToVar = new HashMap<>();
++    		
++    		for (Map.Entry<String, Set<Class<?>>> varClassesEntry : classOfVar.entrySet()) {
++    			String variable = varClassesEntry.getKey();
++    			Set<Class<?>> clazzes = varClassesEntry.getValue();
++    			for (Class<?> clazz : clazzes) {
++	    			if (!classToVar.containsKey(clazz)) {
++	    				classToVar.put(clazz, new HashSet<>());
++	    			}
++	    			classToVar.get(clazz).add(variable);
++    			}
++    		}
++    		
++    		if (!dirName.endsWith("/")) {
++    			dirName = dirName + "/";
++    		}
++    		for (Entry<Class<?>, Set<String>> classToVarEntry : classToVar.entrySet()) {
++//    			logger.warn("classToVarEntry: clazz is " + classToVarEntry.getKey()) ;
++    			Class<?> clazz = classToVarEntry.getKey();
++    			Set<String> variables = classToVarEntry.getValue();
++    			
++    			if (!methodsOfClazz.containsKey(clazz)) {
++    				try {
++		    			Set<String> clazzMethods = Arrays.asList(clazz.getMethods())
++		    					.stream()
++			    			.map(event -> event.getName())
++			    			.collect(Collectors.toSet());
++		    			clazzMethods.addAll(
++		    					Arrays.asList(clazz.getConstructors()).stream()
++		    					.map(event -> event.getName())
++		    					.collect(Collectors.toSet()));
++		    			methodsOfClazz.put(clazz, clazzMethods);
++    				} catch (NoClassDefFoundError ncdfe) {
++    					logger.error("Some kind of error with getting the methods!", ncdfe);
++    					ncdfe.printStackTrace();
++    				}
++    			}
++    			
++    			
++	    		
++    			Set<List<String>> alreadyWritten = new HashSet<>();
++    			
++    			if (!classTracesWriter.containsKey(clazz)) {
++    				String clazzFileName = clazz.getName();
++    				
++    				// use ,true (append) since its annoying later runs may override traces from older runs
++    				// Must take care to delete all old traces for each round of experiment!
++    				classTracesWriter.put(clazz, new BufferedWriter(new FileWriter(dirName +  Properties.CONFIGURATION_ID +  "_" + clazzFileName + ".traces", true)));
++    				
++    			}
++    			
++	    		try {
++	    			BufferedWriter bufferedWriter = classTracesWriter.get(clazz);
++	    			for (String variable : variables) {
++	    				
++	    				if (!tracesOfVar.containsKey(variable)) {
++	    					continue;
++	    				}
++	    				List<String> traces = tracesOfVar.get(variable);
++	    				List<String> filtered = traces.stream()
++	    						.filter(event -> knownCtor.contains(event) 
++	    								|| (methodsOfClazz.containsKey(clazz) && classMethodsInclude(methodsOfClazz.get(clazz), event)) 
++	    								|| isInternal(event))
++	    						.collect(Collectors.toList());
++	    				if (alreadyWritten.contains(filtered)) {
++	    					// skip writing a trace that we know for sure is duplicated.
++	    					// Note that this doesn't completely prevent duplicates in the file
++	    					// But prevent writing duplicates in the same batch of traces.
++	    					continue; 
++	    				}
++	    				
++		    			if (filtered.size() < 1) { // too short
++		    				continue;
++		    			}
++		    			
++		    			alreadyWritten.add(filtered);
++		    			
++		    			String trace = 	String.join(" ", filtered);
++		    			bufferedWriter.write("<START> ");
++			    		bufferedWriter.write(trace);
++			    		bufferedWriter.write(" <END>\n");
++			    		bufferedWriter.flush();
++	    			}
++		    	} catch (IOException ioe) {
++		    		ioe.printStackTrace();
++		    		logger.error("error writing " + clazz.getName(), ioe);
++		    	}
++    		}
++		}
++	}
++	
++	public static void writeCounterExampledProperties(Set<String> countered) {
++		try (BufferedWriter writer = new BufferedWriter(new FileWriter(Properties.CONFIGURATION_ID +  "_" + "countered.rules."+Properties.TARGET_CLASS))) {
++			for (String counter : countered) {
++				writer.write(counter);
++				writer.write("\n");
++			}
++		} catch (IOException e) {
++			e.printStackTrace();
++			
++			logger.warn("Unable to write counter-examples");
++			logger.error("Unable to write counter-examples");
++		}
++	}
++	
++	
++	public static void closeTraceFiles() throws IOException {
++		for (BufferedWriter writer : classTracesWriter.values()) {
++			writer.flush();
++			writer.close();
++		}
++	}
++	public static void writeSeperataor() throws IOException {
++//		for (BufferedWriter writer : classTracesWriter.values()) {
++//			writer.write("====\n");
++//		}
++		logger.warn("everything after this is for writing the traces of the FINAL test suite");
++		logger.warn("DYNAMOSA number of times calcated fitness" + MultiCriteriaManager.numberOfTimesCalucaltedFitness);
++	}
++	
++	private static boolean isInternal(String event) {
++		return event.startsWith("<");
++	}
++	
++	private static boolean classMethodsInclude(Set<String> clazzMethods, String event) {
++		String eventStripped = event.split("\\(")[0];
++		boolean retVal = clazzMethods.contains(eventStripped);
++		
++//		if (!retVal){ 
++//			for (String clazzMethod : clazzMethods) {
++//				logger.warn("mismatch between methods format(?), compare: " + clazzMethod + " vs " + eventStripped);
++//			}
++//		}
++		return retVal;
++	}
++	
++	public static void writeThrowablesToFile() {
++		String name = Properties.TARGET_CLASS.substring(Properties.TARGET_CLASS.lastIndexOf(".") + 1);
++		String testDir = Properties.TEST_DIR;
++		
++		try {
++			
++//			new File(testDir ).mkdirs();
++			try (BufferedWriter bufferedWriter = new BufferedWriter(
++					new FileWriter(testDir + File.separator + name + ".throws", true))) {
++    			
++	    		for (String method : methodsThatCanThrow) {
++	
++		    		bufferedWriter.write(method);
++		    		
++		    		bufferedWriter.write("\n");
++	    		}
++	    	}
++		} catch (Exception e) {
++			logger.error("Error writing traces of which method can throw to file: " + testDir + File.separator + name + ".throws", e);
++		}
++	}
++	
++	public static void main(String... args) throws IOException, NoSuchAlgorithmException, SignatureException, NoSuchProviderException, InvalidKeyException, CloneNotSupportedException {
++//		FileOutputStream fos = new FileOutputStream("hello-world.zip");
++//	     ByteArrayOutputStream byteArrayOutputStream0 = new ByteArrayOutputStream();
++////		BufferedOutputStream bos = new BufferedOutputStream(fos);
++//		ZipOutputStream zos = new ZipOutputStream(byteArrayOutputStream0);
++//
++//		try {
++//		    for (int i = 0; i < 10; i++) {
++//		        // not available on BufferedOutputStream
++////		        zos.putNextEntry(new ZipEntry("hello-world." + i + ".txt"));
++////		        zos.write("Hello World!".getBytes());
++//		    	
++//		    	byte[] byteArray0 = new byte[7];
++//		        byteArray0[0] = (byte)0;
++//		        byteArray0[1] = (byte)0;
++//		        byteArray0[2] = (byte)0;
++//		        byteArray0[3] = (byte)21;
++//		        byteArray0[4] = (byte)0;
++//		        byteArray0[5] = (byte)0;
++//		        byteArray0[6] = (byte)0;
++//		        zos.write("Hello World!".getBytes(), (int) (byte)0, 0);
++//		        // not available on BufferedOutputStream
++//		        zos.closeEntry();
++//		    }
++//		}
++//		finally {
++//		    zos.close();
++//		}
++//		
++//		System.out.println("end");
++
++//		String string0 = "nonewithrsa";
++//		Signature signature0 = Signature.getInstance(string0);
++//		int int0 = 5920;
++//		byte byte0 = (byte)4;
++//		int int1 = (-36744287);
++//		int int2 = (-1538226597);
++//		DSAGenParameterSpec dSAGenParameterSpec0 = new DSAGenParameterSpec(2048, 256, 300);
++//		dSAGenParameterSpec0.getPrimePLength();
++//		Provider provider0 = signature0.getProvider();
++//		
++//		KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
++//		KeyPair keyPair = keyPairGenerator.generateKeyPair();
++//		                
++//		signature0.initVerify(keyPair.getPublic());
++//		signature0.update(byte0);
++//		
++////		KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("DSA");
++////		KeyPair keyPair = keyPairGenerator.generateKeyPair();
++//		
++//		signature0.initVerify(keyPair.getPublic());
++////		signature0.clone();
++//		
++//		
++//		ArrayList list = new ArrayList<>();
++//		list.add(1);list.add(2); list.add(3);
++//		Iterator iter = list.iterator();
++//		while (iter.hasNext()) {
++//			System.out.println("!");
++//			
++//			iter.next();
++//			iter.remove();
++//			System.out.println("should not reach here!");
++//		}
++//		
++//		ByteBuffer bb = ByteBuffer.allocate(4);
++//		bb.putInt(5);
++//		bb.rewind(); // api mis-use. rewind or an alternative should be invoked!
++//		int i = bb.getInt();
++//		
++//		Stream<Integer> a = list.stream();
++//		System.out.println(a);
++//		
++//		Stream<Object> b = a.map(q -> q * 2);
++//		System.out.println(b);
++//		
++//		stuff();
++//	
++//		try {
++//			Class<?> clazz = Class.forName("tutorial.util.LinkedList");
++//			
++//			System.out.println(clazz.getMethods());
++//		} catch (ClassNotFoundException e) {
++//			// TODO Auto-generated catch block
++//			e.printStackTrace();
++//		}
++		
++//		try {
++//			Class<?> clazz = Class.forName("java.io.FileOutputStream");
++//			
++//			System.out.println(clazz.getMethods());
++//			System.out.println(clazz.getSuperclass());
++//			System.out.println(Arrays.asList(clazz.getInterfaces()));
++//			
++//			System.out.println(clazz.getSuperclass().getSuperclass());
++//			System.out.println(Arrays.asList(clazz.getSuperclass().getInterfaces()));
++//			
++//			Arrays.asList(clazz.getSuperclass().getInterfaces())
++//			.forEach(inter -> System.out.println(">>" + inter.getSuperclass()));
++//			
++//			Arrays.asList(clazz.getSuperclass().getInterfaces())
++//			.forEach(inter -> System.out.println(">>>" + Arrays.asList(inter.getInterfaces())));
++//		} catch (ClassNotFoundException e) {
++//			// TODO Auto-generated catch block
++//			e.printStackTrace();
++//		}
++//		
++//		HashMap<Object, String> hashMap0 = new HashMap<Object, String>();
++//		Hashtable<Object, String> hashtable0 = new Hashtable<Object, String>(hashMap0);
++//		hashtable0.clone();
++//		hashtable0.clone();
++//		Object object0 = new Object();
++//		hashtable0.hashCode();
++//		Object object1 = new Object();
++//		hashtable0.remove(object1);
++//		hashtable0.hashCode();
++//		hashtable0.clone();
++//		hashtable0.clone();
++//		String string0 = "";
++////		hashMap0.isEmpty();
++//		System.out.println(hashMap0.isEmpty());
++//		System.out.println(hashMap0.isEmpty());
++//		hashtable0.remove(string0);
++//		int int0 = 29;
++//		int int1 = 16;
++//		hashtable0.remove(hashMap0);
++//		System.out.println(hashtable0.isEmpty());
++//		int int2 = 923;
++//		int int3 = (-4643);
++//		int int4 = 27;
++//		HashSet<String> hashSet0 = new HashSet<String>(int4, int4);
++//		System.out.println(hashMap0.isEmpty());
++//		hashtable0.clone();
++//		hashtable0.remove(object0);
++//		System.out.println(hashtable0.isEmpty());
++//	
++		
++		int int0 = 2282;
++		ByteArrayOutputStream byteArrayOutputStream0 = new ByteArrayOutputStream(int0);
++		ZipOutputStream zipOutputStream0 = new ZipOutputStream(byteArrayOutputStream0);
++		String string0 = "";
++		ZipEntry zipEntry0 = new ZipEntry(string0);
++		ZipEntry zipEntry1 = new ZipEntry(zipEntry0);
++		ZipEntry zipEntry2 = new ZipEntry(zipEntry0);
++		zipOutputStream0.putNextEntry(zipEntry0);
++		int int1 = (-1);
++		byte byte0 = (byte)0;
++		zipOutputStream0.closeEntry();
++		byte byte1 = (byte)0;
++		byteArrayOutputStream0.close();
++		byte[] byteArray0 = new byte[1];
++		byteArray0[0] = byte1;
++		byteArrayOutputStream0.write(byteArray0);
++		int int2 = (-701);
++		zipOutputStream0.write(byteArray0, int2, zipEntry1.DEFLATED);
++		zipOutputStream0.closeEntry();
++		zipOutputStream0.putNextEntry(zipEntry0);
++		int int3 = 6;
++		int int4 = 2147483646;
++		zipOutputStream0.write(byteArray0, int3, int4);
++		int int5 = (-1);
++		zipOutputStream0.write(byteArray0, int5, int4);
++		zipOutputStream0.close();
++		zipOutputStream0.closeEntry();
++		int int6 = (-6);
++		int int7 = 4;
++		zipOutputStream0.write(byteArray0, int6, int7);
++		zipOutputStream0.close();
++		zipOutputStream0.close();
++		int int8 = 1073741824;
++		int int9 = 8;
++		zipOutputStream0.write(byteArray0, int8, int9);
++		zipOutputStream0.putNextEntry(zipEntry2);
++		int int10 = 1073741824;
++		int int11 = 1073741824;
++		zipOutputStream0.write(byteArray0, int10, int11);
++		int int12 = (-721);
++		int int13 = 38;
++		zipOutputStream0.write(byteArray0, int12, int13);
++		zipOutputStream0.putNextEntry(zipEntry1);
++		zipOutputStream0.close();
++		zipOutputStream0.putNextEntry(zipEntry1);
++		int int14 = 60;
++		zipOutputStream0.write(byteArray0, int14, int0);
++		zipOutputStream0.closeEntry();
++		zipOutputStream0.write(byteArray0, int14, int12);
++		zipOutputStream0.putNextEntry(zipEntry2);
++		zipOutputStream0.putNextEntry(zipEntry2);
++		ZipEntry zipEntry3 = new ZipEntry(zipEntry1);
++		zipOutputStream0.putNextEntry(zipEntry2);
++		zipOutputStream0.putNextEntry(zipEntry0);
++		zipOutputStream0.putNextEntry(zipEntry2);
++		zipOutputStream0.write(byteArray0, int7, (int) byte0);
++		zipOutputStream0.putNextEntry(zipEntry1);
++		zipOutputStream0.close();
++	}
++
++	public static boolean isFirstRun() {
++		return isFirstRun;
++	}
++	
++	public static void notFirstRun() {
++		isFirstRun = false;
++	}
++	
++	public static void seedConstants() {
++		// assuming on the macbook, set Remote Login to enabled. 
++		if (Properties.TARGET_CLASS.contains("Sftp")) {
++			ConstantPoolManager.getInstance().addDynamicConstant("localhost");
++//			ConstantPoolManager.getInstance().addDynamicConstant("tester");
++//			ConstantPoolManager.getInstance().addDynamicConstant("asdf");
++			ConstantPoolManager.getInstance().addDynamicConstant("/Users/tester");
++			ConstantPoolManager.getInstance().addDynamicConstant("test.txt");
++			ConstantPoolManager.getInstance().addDynamicConstant("testdir");
++		}
++		// assuming  fakeSMTP running on localhost on port 25
++		if (Properties.TARGET_CLASS.contains("SMTP")) {
++			ConstantPoolManager.getInstance().addDynamicConstant("localhost");
++			ConstantPoolManager.getInstance().addDynamicConstant(25);
++		}
++	}
++	
++	
++	public static void stuff() {
++		System.out.println(ManagementFactory.getRuntimeMXBean().getName());
++	}
++	public static String pid() {
++		String fullName = ManagementFactory.getRuntimeMXBean().getName();
++		String pid = fullName.split("@")[0];
++		return pid;
++	}
++	
++	public static long shelloutToLsof(String pid) {
++		ProcessBuilder processBuilder = new ProcessBuilder();
++
++		processBuilder.command("lsof", "-a", "-p",  pid);
++		long count = 0;
++
++		try {
++
++			Process process = processBuilder.start();
++
++			StringBuilder output = new StringBuilder();
++
++			BufferedReader reader = new BufferedReader(
++					new InputStreamReader(process.getInputStream()));
++
++			String line;
++			
++			while ((line = reader.readLine()) != null) {
++				output.append(line + "\n");
++				count += 1;
++			}
++
++
++		} catch (IOException e) {
++			e.printStackTrace();
++		} 
++		return count;
++	}
++	
++	
++}
+diff --git a/client/src/main/java/org/evosuite/coverage/ltl/LtlCoverageTestFitness.java b/client/src/main/java/org/evosuite/coverage/ltl/LtlCoverageTestFitness.java
+new file mode 100644
+index 000000000..e3629d0fa
+--- /dev/null
++++ b/client/src/main/java/org/evosuite/coverage/ltl/LtlCoverageTestFitness.java
+@@ -0,0 +1,527 @@
++package org.evosuite.coverage.ltl;
++
++import java.io.File;
++import java.io.IOException;
++import java.lang.reflect.Constructor;
++import java.lang.reflect.Method;
++import java.util.ArrayList;
++import java.util.Arrays;
++import java.util.Collection;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.List;
++import java.util.Map;
++import java.util.Map.Entry;
++import java.util.Set;
++
++import org.apache.commons.lang3.tuple.Pair;
++import org.evosuite.Properties;
++import org.evosuite.assertion.OutputTrace;
++import org.evosuite.assertion.OutputTraceEntry;
++import org.evosuite.assertion.PrimitiveTraceEntry;
++import org.evosuite.coverage.fsatransition.Fsa.StateAndLabelPair;
++import org.evosuite.coverage.fsatransition.Fsa.TraversalResults;
++import org.evosuite.ga.archive.Archive;
++import org.evosuite.coverage.fsatransition.FsaUtils;
++import org.evosuite.testcase.TestChromosome;
++import org.evosuite.testcase.TestFitnessFunction;
++import org.evosuite.testcase.execution.ExecutionResult;
++import org.evosuite.testcase.statements.ConstructorStatement;
++import org.evosuite.testcase.statements.MethodStatement;
++import org.evosuite.testcase.statements.Statement;
++import org.evosuite.testcase.variable.VariableReference;
++import org.evosuite.utils.LoggingUtils;
++import org.objectweb.asm.Type;
++
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
++
++import javassist.Modifier;
++
++public class LtlCoverageTestFitness extends TestFitnessFunction {
++
++	/**
++	 * 
++	 */
++	private static final long serialVersionUID = 7867377725218652621L;
++	/**
++	 * 
++	 */
++	
++    private final Class<?> className;
++    private final String start;
++    private final String end;
++    private final String label;
++    
++    public int age = -1; // how many generations has this been uncovered for?
++    
++    private static Map<String, String> properMethodNames = new HashMap<>();
++    public static Set<String> covered = new HashSet<>();
++    public static int numInstances = 0;
++    public static int numRetired = 0;
++    
++    
++    public static Set<String> pureMethods = new HashSet<>();
++    
++	private static Logger logger = LoggerFactory.getLogger(LtlCoverageTestFitness.class);
++	
++	public static final boolean allowEvolutionWithoutLTLFitness = false; // if true, we want to find which properties get covered. But we do not let this influence the test evolution
++
++    
++	public LtlCoverageTestFitness(Class<?> className, String start, String end, String label) {
++		super();
++		this.className = className;
++		this.start = start;
++		this.end = end;
++		this.label = label;
++		
++		numInstances+= 1;
++		assert label.equals("NIF") ||  label.equals("NF") || 
++				label.equals("AIP") || label.equals("AP") || 
++				label.equals("AF") || label.equals("AIF"); 
++	}
++
++	public Class<?> getClassName() {
++		return className;
++	}
++
++	public String getStart() {
++		return start;
++	}
++
++	public String getEnd() {
++		return end;
++	}
++	
++	public String getLabel() {
++		return label;
++	}
++    
++    @Override
++	public String toString() {
++		return "LtlCoverage [className=" + className + ", start=" + start + ", end=" + end + ", label="
++				+ label + "]";
++	}
++    
++    public String convenientLTLForm() {
++    	return "LTL:" + label + " " + start + " " + end;
++    }
++
++	@Override
++    public double getFitness(TestChromosome individual, ExecutionResult result) {
++        double fitness = 1.0;
++        
++        if (result.hasTimeout()) {
++        	return fitness;
++        }
++        if (result.hasLeak) {
++        	return fitness;
++        }
++        if (result.hasTestException()) { // evosuite doesn't cover the test if it has a test exception. Let's check for it, although I don't know what it is  
++        	return fitness;
++        }
++                
++        Set<Integer> exceptionPositions = result.getPositionsWhereExceptionsWereThrown();
++        
++        Map<VariableReference, List<String>> traces = new HashMap<>();
++        Map<VariableReference, List<String>> tracesDebugInfo = new HashMap<>();
++        Map<String, Set<Class<?>>> classOfVar = new HashMap<>();
++        
++        for (Statement stmt : result.test) {
++        	
++        	boolean isExceptionThrownByStmt = exceptionPositions.contains(stmt.getPosition());
++        	
++        	VariableReference objectToTrace = FsaUtils.tracedObject(classOfVar, stmt);
++        	
++        	String methodName = FsaUtils.methodName(result, stmt, isExceptionThrownByStmt,
++        			result.getExceptionThrownAtPosition(stmt.getPosition()) != null ?
++        			result.getExceptionThrownAtPosition(stmt.getPosition()).getClass().getSimpleName() :
++        				null, 
++        			result.test, false);
++        	
++//        	logger.warn("method name in ltl :	" + methodName);
++
++        	if (isExceptionThrownByStmt) {
++                break;
++        	}
++        	if (objectToTrace == null) {
++        		continue;
++        	}
++        	if (methodName == null || methodName.isEmpty()) {
++//        		break; // not sure should use break or continue
++        		continue;
++        	}
++        	if (!traces.containsKey(objectToTrace)) {
++            	traces.put(objectToTrace, new ArrayList<>());
++            	tracesDebugInfo.put(objectToTrace, new ArrayList<>());
++        	}
++        	if (methodName != null) {
++	        	traces.get(objectToTrace).add(methodName);
++	        	tracesDebugInfo.get(objectToTrace).add(stmt.getCode() + " @ " + stmt.getPosition());
++        	}
++
++        	
++        }
++        
++        for (Entry<VariableReference, List<String>> entry : traces.entrySet()) {
++       	 	Set<Class<?>> currentClass = classOfVar.get(entry.getKey().getName());
++	       	
++	       	if (currentClass == null
++	       			|| currentClass.isEmpty()
++	       			|| (currentClass.stream().noneMatch(currentClazz -> currentClazz.equals(className) ||  className.isAssignableFrom(currentClazz))))  {
++	       		if (currentClass != null) {
++//	       			LoggingUtils.logWarnAtMostOnce(logger, "different classes LTLCoverageTestFitness:"  + currentClass + " vs " + className);
++//	       			logger.warn();
++	       		}
++	       		continue;
++	       	}
++	       	
++	       	// if "NIF", want to find sequences involving both methods such that they are beside each other.
++	       	//									
++	       	// if "AIP", want to find both methods such that they are NOT beside each other.
++	       	// 									sequences where both methods appear should be favoured.
++	       	// if "NF", want to find sequences where A followed by B. 
++	       	// if "AP", want to find sequences where A is never preceded by B. But both methods appear should be favoured
++	       	
++	       	float traceValue = 1.0f;
++	       	if (this.label.equals("NIF")) {
++	       		traceValue = neverFollowed(entry.getValue(), this.start, this.end, true);
++	       	} else if (this.label.equals("AIP")) {
++	       		traceValue = alwaysPreceded(entry.getValue(), this.start, this.end, true);
++	       	} else if (this.label.equals("NF")) {
++	       		traceValue = neverFollowed(entry.getValue(), this.start, this.end, false);
++	       	} else if (this.label.equals("AP")) {
++	       		traceValue = alwaysPreceded(entry.getValue(), this.start, this.end, false);
++	       	} else if (this.label.equals("AF")) {
++	       		traceValue = alwaysFollowed(entry.getValue(), this.start, this.end, false);
++	       	} else if (this.label.equals("AIF")) {
++	       		traceValue = alwaysFollowed(entry.getValue(), this.start, this.end, true);
++	       	} else {
++	       		throw new RuntimeException("unknown label: >" + label + "< ");
++	       	}
++	       	fitness = Math.min(fitness, traceValue);   	
++	       	if (fitness == 0.0 && !covered.contains(this.convenientLTLForm())) {
++	            logger.warn("covering trace of " + this + " is ");
++	            logger.warn("\t variable is " + entry.getKey());
++	            logger.warn("\t " + entry.getValue());
++	            logger.warn("\t debug info is " + tracesDebugInfo.get(entry.getKey()));
++	            logger.warn("exceptional positions" + exceptionPositions);
++//	            logger.warn("\tthe whole test looks like " + result.test);
++	            
++	            covered.add(this.convenientLTLForm());
++	            
++	            
++	            try {
++	            	FsaUtils.writeTracesToFile( entry.getValue(), Properties.getTargetClassAndDontInitialise(), "./");
++				} catch (IOException e) {
++					e.printStackTrace();
++					logger.error("cannot write to traces file", e);
++				}
++	            break;
++	            
++	       	}
++        }
++        
++        
++        if (allowEvolutionWithoutLTLFitness) {
++        	updateIndividual(this, individual, 1.0);
++        	return 1.0; // in other words, its never covered from the "fitness" perspective
++        }
++        
++        assert fitness >= 0.0;
++        updateIndividual(this, individual, fitness);
++
++        if (fitness == 0.0) {
++        	LoggingUtils.logWarnAtMostOnce(logger, "Fitness is 0 has been reached!");
++            individual.getTestCase().addCoveredGoal(this);
++            
++        }
++
++        if (Properties.TEST_ARCHIVE) {
++            Archive.getArchiveInstance().updateArchive(this, individual, fitness);
++        }
++
++        return fitness;
++    	
++    }
++	
++	public float neverFollowed(List<String> events, String eventA, String eventB, boolean immediately) {
++		int seenEventAAt = -1;
++		int i = 0;
++		int counter = 0;
++		int distance = 999;
++		for (String event : events) {
++			if (event.equals(eventA)) {
++				seenEventAAt = i; 
++				
++				counter = 0;
++			} else if (seenEventAAt != -1) {
++				if (!pureMethods.contains(event)) {
++					counter += 1;
++				}
++			}
++			
++			if (i != seenEventAAt && event.equals(eventB) && seenEventAAt != -1) {
++				distance = Math.min(distance, counter);
++			}
++			
++			i ++;
++		}
++		
++		if (seenEventAAt == -1) {
++			if (distance < 999) {
++				// have seen event B
++				return 0.9f;
++			}
++			return 1;
++		}
++		
++		if (immediately) {
++			return distance == 1 || distance == 0 ? 0 : ((float)distance * 0.8f / events.size()) ;
++		} else {
++			return distance < 999 ? 0 : 0.5f;
++		}
++	}
++	
++	public float alwaysPreceded(List<String> events, String eventA, String eventB, boolean immediately) {
++		int seenEventAAt = -1;
++		int distance = 999;
++		int counter = 0;
++		
++		for (int i = events.size() - 1; i >= 0; i--) {
++			String event = events.get(i);
++			if (event.equals(eventA)) {
++				seenEventAAt = i; 
++				counter=  0;
++			} else if (seenEventAAt != -1) {
++				if (!pureMethods.contains(event)) {
++					counter += 1;
++				}
++			}
++			
++			if (seenEventAAt != -1 && event.equals(eventB)) {
++				distance = Math.min(distance, counter);
++			}
++		}
++		
++		if (seenEventAAt == -1) {
++			if (distance != 999) {
++				return 0.9f;
++			}
++			return 1; // not a counter-example if we do not see eventA
++		}
++		
++		if (immediately) {
++			return distance == 1 || distance == 0 ? ((float)distance * 0.8f / events.size()) : 0;
++		} else {
++			return distance == 999 ? 0 : 0.5f;
++		}
++	}
++
++	
++	public float alwaysFollowed(List<String> events, String eventA, String eventB, boolean immediately) {
++		int seenEventAAt = -1;
++		int distance = 999;
++		int counter = 0;
++		
++		for (int i = 0; i < events.size(); i++) {
++			String event = events.get(i);
++			if (event.equals(eventA)) {
++				seenEventAAt = i; 
++				counter=  0;
++			} else if (seenEventAAt != -1) {
++				if (!pureMethods.contains(event)) {
++					counter += 1;
++				}
++			}
++			
++			if (event.equals(eventB) && seenEventAAt != -1) {
++				distance = Math.min(distance, counter);
++			}
++		}
++		
++		if (seenEventAAt == -1) {
++			if (distance != 999) {
++				
++				return 0.9f;
++			}
++			return 1; // not counter-eaxmple if eventA isn't seen!
++		}
++		
++		if (immediately) {
++			return distance == 1 || distance == 0 ? ((float)distance * 0.8f / events.size()) : 0;
++		} else {
++			return distance < 999 ? 0.5f : 0;
++		}
++		
++	}
++	
++
++	
++
++	@Override
++	public int hashCode() {
++		final int prime = 31;
++		int result = 1;
++		result = prime * result + ((className == null) ? 0 : className.hashCode());
++		result = prime * result + ((end == null) ? 0 : end.hashCode());
++		result = prime * result + ((label == null) ? 0 : label.hashCode());
++		result = prime * result + ((start == null) ? 0 : start.hashCode());
++		return result;
++	}
++
++	@Override
++	public boolean equals(Object obj) {
++		if (this == obj)
++			return true;
++		if (obj == null)
++			return false;
++		if (getClass() != obj.getClass())
++			return false;
++		LtlCoverageTestFitness other = (LtlCoverageTestFitness) obj;
++		if (className == null) {
++			if (other.className != null)
++				return false;
++		} else if (!className.equals(other.className))
++			return false;
++		if (end == null) {
++			if (other.end != null)
++				return false;
++		} else if (!end.equals(other.end))
++			return false;
++
++		if (label == null) {
++			if (other.label != null)
++				return false;
++		} else if (!label.equals(other.label))
++			return false;
++		if (start == null) {
++			if (other.start != null)
++				return false;
++		} else if (!start.equals(other.start))
++			return false;
++		return true;
++	}
++
++	@Override
++	public int compareTo(TestFitnessFunction other) {
++		if (other instanceof LtlCoverageTestFitness) {
++			LtlCoverageTestFitness otherMethodFitness = (LtlCoverageTestFitness) other;
++	        if (className.getCanonicalName().equals(otherMethodFitness.getClassName().getCanonicalName())) {
++	            if(start.equals(otherMethodFitness.getStart())) {
++	            	if (end.equals(otherMethodFitness.getEnd())) {
++	            		return label.compareTo(otherMethodFitness.getLabel());
++	            	} else {
++	            		return end.compareTo(otherMethodFitness.getEnd());
++	            	}
++	            } else
++	                return start.compareTo(otherMethodFitness.getStart());
++	        }
++	        else
++	            return className.getCanonicalName().compareTo(otherMethodFitness.getClassName().getCanonicalName());
++	    }
++	    return compareClassName(other);
++	}
++
++	@Override
++	public String getTargetClass() {
++//		return className.getCanonicalName();
++		return Properties.TARGET_CLASS;
++	}
++
++	@Override
++	public String getTargetMethod() {
++		
++		
++		String methodToTarget = start;
++		populateProperNames(methodToTarget);
++		
++		return properMethodNames.containsKey(methodToTarget) ? properMethodNames.get(methodToTarget) : "dummy-method";
++	}
++	
++	public String getSecondaryTargetMethod() {
++		if (this.label.charAt(0) != 'N') {
++			return null;
++		}
++		
++		String methodToTarget = end;
++		populateProperNames(methodToTarget);
++		
++		return properMethodNames.containsKey(methodToTarget) ? properMethodNames.get(methodToTarget) : "dummy-method";
++	}
++    
++
++	private void populateProperNames(String methodToTarget) {
++		if (!properMethodNames.containsKey(methodToTarget)) {
++			 Method[] allMethods = Properties.getTargetClassAndDontInitialise().getMethods();
++				Constructor<?>[] ctors = Properties.getTargetClassAndDontInitialise().getConstructors();
++
++				
++			
++			String prefix = methodToTarget.split(":")[0];
++			for (Method m : allMethods) {
++				if (m.getName().equals(prefix)) {
++					String name = m.getName() +		Type.getMethodDescriptor(m);
++					properMethodNames.put(methodToTarget, name);
++					break;
++				}
++			}
++			
++			if (!properMethodNames.containsKey(methodToTarget)) {
++				// are we a constructor?
++				boolean isCapitalFirstLetter = Character.isUpperCase(methodToTarget.charAt(0));
++
++				
++				for (Constructor c : ctors) {
++					if (prefix.startsWith("<init") || isCapitalFirstLetter) {
++						String methodName = "<init>" + Type.getConstructorDescriptor(c);
++						properMethodNames.put(methodToTarget, methodName);
++						break;
++					}
++				}
++				
++				if (!properMethodNames.containsKey(methodToTarget)) {
++					
++					for (Method m : allMethods) {
++						if (Modifier.isStatic(m.getModifiers()) && m.getReturnType().equals(Properties.getTargetClassAndDontInitialise())) {
++							String name = m.getName() +		Type.getMethodDescriptor(m);
++							properMethodNames.put(methodToTarget, name);
++							break;
++						}
++					}
++				}
++			
++			}
++			
++			if (!properMethodNames.containsKey(methodToTarget)) {
++				// still can't find the right name
++				LoggingUtils.logErrorAtMostOnce(logger, "cannot find method name for " + methodToTarget);
++				
++//				for (Method m : allMethods) {
++//					logger.error("\tname is " + m.getName() );
++					
++					
++//				}
++				
++//				for (Constructor c : ctors) {
++//					logger.error("\tname is " + c.getName() );
++//				}
++//				throw new RuntimeException("bad");
++			}
++			
++			
++		}
++	}
++	
++	
++	public static void addPureMethods(Collection<String> pures) {
++		
++		for (String pure: pures) {
++			String nameOnly = pure.split("\\(")[0];
++			pureMethods.add(nameOnly);
++		}
++	}
++
++	
++    
++}
+diff --git a/client/src/main/java/org/evosuite/testcase/execution/TestCaseExecutor.java b/client/src/main/java/org/evosuite/testcase/execution/TestCaseExecutor.java
+index 349b687a8..1860b1f5c 100755
+--- a/client/src/main/java/org/evosuite/testcase/execution/TestCaseExecutor.java
++++ b/client/src/main/java/org/evosuite/testcase/execution/TestCaseExecutor.java
+@@ -20,6 +20,8 @@
+ package org.evosuite.testcase.execution;
+ 
+ import java.io.PrintStream;
++import java.lang.management.ManagementFactory;
++import java.lang.management.OperatingSystemMXBean;
+ import java.util.HashSet;
+ import java.util.Iterator;
+ import java.util.LinkedHashSet;
+@@ -33,6 +35,15 @@ import java.util.concurrent.TimeoutException;
+ 
+ import org.evosuite.Properties;
+ import org.evosuite.TestGenerationContext;
++import org.evosuite.assertion.ArgumentValueTraceEntry;
++import org.evosuite.assertion.ArgumentValueTraceObserver;
++import org.evosuite.assertion.ComparisonTraceEntry;
++import org.evosuite.assertion.NullTraceEntry;
++import org.evosuite.assertion.NullTraceObserver;
++import org.evosuite.assertion.PrimitiveTraceEntry;
++import org.evosuite.assertion.PrimitiveTraceObserver;
++import org.evosuite.coverage.fsatransition.FsaUtils;
++import org.evosuite.coverage.fsatransition.HJScriptRunnerForFTP;
+ import org.evosuite.ga.stoppingconditions.MaxStatementsStoppingCondition;
+ import org.evosuite.ga.stoppingconditions.MaxTestsStoppingCondition;
+ import org.evosuite.runtime.LoopCounter;
+@@ -42,12 +53,15 @@ import org.evosuite.runtime.sandbox.PermissionStatistics;
+ import org.evosuite.runtime.sandbox.Sandbox;
+ import org.evosuite.runtime.util.JOptionPaneInputs;
+ import org.evosuite.runtime.util.SystemInUtil;
++import org.evosuite.runtime.vfs.VirtualFileSystem;
+ import org.evosuite.setup.TestCluster;
+ import org.evosuite.testcase.TestCase;
+ import org.evosuite.testcase.execution.reset.ClassReInitializer;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ 
++import com.sun.management.UnixOperatingSystemMXBean;
++
+ /**
+  * <p>
+  * The test case executor manages thread creation/deletion to execute a test
+@@ -132,19 +146,39 @@ public class TestCaseExecutor implements ThreadFactory {
+ 	 */
+ 	public static ExecutionResult runTest(TestCase test) {
+ 
++		PrimitiveTraceObserver primitiveObserver = new PrimitiveTraceObserver();
++		NullTraceObserver nullObserver = new NullTraceObserver();
++//		ArgumentValueTraceObserver argsValueObserver = new ArgumentValueTraceObserver();
++		TestCaseExecutor.getInstance().addObserver(primitiveObserver);
++		TestCaseExecutor.getInstance().addObserver(nullObserver);
++//		TestCaseExecutor.getInstance().addObserver(argsValueObserver);
++		
++		
+ 		ExecutionResult result = new ExecutionResult(test, null);
+ 
+ 		try {
+ 			TestCaseExecutor executor = getInstance();
+ 			logger.debug("Executing test");
++			
++			
+ 			result = executor.execute(test);
+-
++			
++				HJScriptRunnerForFTP.runServerIfCrossExecutionCountThreshold();
+ 			MaxStatementsStoppingCondition.statementsExecuted(result.getExecutedStatements());
+ 
+ 		} catch (Exception e) {
+ 			logger.error("TG: Exception caught: ", e);
+ 			throw new Error(e);
+ 		}
++		
++		result.setTrace(primitiveObserver.getTrace(), PrimitiveTraceEntry.class);
++		result.setTrace(nullObserver.getTrace(), NullTraceEntry.class);
++//		result.setTrace(argsValueObserver.getTrace(), ArgumentValueTraceEntry.class);
++
++		TestCaseExecutor.getInstance().removeObserver(primitiveObserver);
++		TestCaseExecutor.getInstance().removeObserver(nullObserver);
++//		TestCaseExecutor.getInstance().removeObserver(argsValueObserver);
++
+ 
+ 		return result;
+ 	}
+@@ -274,7 +308,34 @@ public class TestCaseExecutor implements ThreadFactory {
+ 	 */
+ 	public ExecutionResult execute(TestCase tc, int timeout) {
+ 		Scope scope = new Scope();
+-		ExecutionResult result = execute(tc, scope, timeout);
++		
++		ExecutionResult result;
++		ArgumentValueTraceObserver argsValueObserver = new ArgumentValueTraceObserver();
++		this.addObserver(argsValueObserver);
++		
++		if (FsaUtils.checkLeak) { // shelling out to lsof is expensive. So let's not do that that often if we can help it. 
++			// we turn off checks for lsof if 1000 executions have passed without a leak.
++			
++			long numFd = FsaUtils.shelloutToLsof(FsaUtils.pid());
++			result = execute(tc, scope, timeout);
++			
++			result.hasLeak = FsaUtils.shelloutToLsof(FsaUtils.pid()) != numFd;
++			if (!result.hasLeak) {
++				FsaUtils.hasNotLeak += 1;
++				
++				if (FsaUtils.hasNotLeak > 1000) {
++					logger.warn("turning off checks for leaks");
++					FsaUtils.checkLeak = false;
++				}
++			} else {
++				FsaUtils.hasNotLeak = 0;
++			}
++		} else {
++			result = execute(tc, scope, timeout);
++		}
++		result.setTrace(argsValueObserver.getTrace(), ArgumentValueTraceEntry.class);
++		
++		TestCaseExecutor.getInstance().removeObserver(argsValueObserver);
+ 
+ 		if (Properties.RESET_STATIC_FIELDS) {
+ 			logger.debug("Resetting classes after execution");
+@@ -330,12 +391,27 @@ public class TestCaseExecutor implements ThreadFactory {
+ 
+ 			Sandbox.goingToExecuteSUTCode();
+ 			TestGenerationContext.getInstance().goingToExecuteSUTCode();
++			
++			long numberOfResourcesNow = VirtualFileSystem.getInstance().getNumberOfLeakingResources();
++			OperatingSystemMXBean os = ManagementFactory.getOperatingSystemMXBean();
++	        if (os instanceof UnixOperatingSystemMXBean){
++	        	numberOfResourcesNow = ((UnixOperatingSystemMXBean) os).getOpenFileDescriptorCount();
++	        }
++
+ 			try {
+ 				result = handler.execute(callable, executor, timeout, Properties.CPU_TIMEOUT);
+ 			} finally {
+ 				Sandbox.doneWithExecutingSUTCode();
+ 				TestGenerationContext.getInstance().doneWithExecutingSUTCode();
+ 			}
++			
++			os = ManagementFactory.getOperatingSystemMXBean();
++	        if (os instanceof UnixOperatingSystemMXBean){
++	        	result.hasLeak = numberOfResourcesNow != ((UnixOperatingSystemMXBean) os).getOpenFileDescriptorCount();
++	        }
++	        
++//			result.hasLeak = numberOfResourcesNow != VirtualFileSystem.getInstance().getNumberOfLeakingResources();
++
+ 
+ 			PermissionStatistics.getInstance().countThreads(threadGroup.activeCount());
+ 			result.setSecurityException(PermissionStatistics.getInstance().getAndResetExceptionInfo());
