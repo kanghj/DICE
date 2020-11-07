@@ -2,17 +2,18 @@
 
 This accompanies the paper, Adversarial Specification Mining.
 
-The objective of this work is to __better mine automata models of APIs__. 
+## Introduction
+Objective: __better mine automata specifications/models of APIs__. 
+From an initial set of execution traces, we try to fill in the gaps in the diversity of the traces.
 This is done through **search-based test generation guided to produce execution traces during testing that will falsify LTL properties** that was thought to hold of the API.
-In this work, we focus on LTL properties over 2 events, using property templates introduced in prior studies [4,5,6].
-Through this effort to look for new traces that contradict properties previously thought to hold, we can improve the model as the specification inference process benefits from the diverse traces.
+We focus on LTL properties involving 2 events.
+We use property templates from prior studies [4,5,6].
+By finding new traces that are counterexamples to these properties, we can improve the model as the specification inference process benefits from the diverse traces.
+
 
 Afterwards, we show that this process is also useful for fuzzing of protocols. By **learning automata models of a protocol's client, this allows us to explore deeper states** in a server of the protocol.
 
-
-
-We also propose **a new specification mining algorithm** that can leverage the diverse traces produced from the above process. 
-More is described in the paper, but mainly, we use the insights developed by prior studies. 
+To mine specifications, we use the insights from prior studies. 
 
 Our specification inference approach can be viewed as an approach that is enhanced by and builds on the following studes: 
 1. The k-tails algorithm [1]
