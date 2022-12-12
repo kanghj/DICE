@@ -42,3 +42,7 @@ As for the models of Tautoko, they can be found in this [tautoko directory](http
 The traces and model used for fuzzing the FTP and RTSP server are found [here](https://github.com/kanghj/DICE/tree/master/server_fuzzing/server_fuzzing).
 The source code of AFLNET, which we modified, can be found [here](https://github.com/kanghj/DICE/tree/master/dice-aflnet).
 AFLNET was originally found at https://github.com/aflnet/aflnet and was developed by Van-Thuan Pham and Marcel Böhme and Abhik Roychoudhury
+
+
+Some instructions can be found at 
+https://gist.github.com/kanghj/c32c79694fd1b0120e33266ac326cf50
